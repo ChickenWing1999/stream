@@ -1,12 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Embedded Live Stream</title>
+  <title>Stephen Fulton VS Naoya Inoue Live Stream</title>
   <!-- Add Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
+  <!-- Add Google Fonts - Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap">
+
+  <!-- Add meta viewport tags for responsiveness -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
     /* Base styles */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #111; /* Replace with your desired dark color */
+      font-family: Arial, sans-serif;
+    }
+
     .video-container {
       position: relative;
       padding-bottom: 56.25%; /* 16:9 aspect ratio (height/width) */
@@ -34,10 +47,17 @@
       }
     }
 
+    @media screen and (max-width: 992px) {
+      /* Adjust height for small screens */
+      .video-container {
+        padding-bottom: 70%; /* 16:9 aspect ratio for small screens */
+      }
+    }
+
     @media screen and (max-width: 768px) {
       /* Adjust height for smaller screens */
       .video-container {
-        padding-bottom: 75%; /* 4:3 aspect ratio for tablets and mobile devices */
+        padding-bottom: 80%; /* 4:3 aspect ratio for tablets and mobile devices */
       }
     }
 
@@ -46,17 +66,94 @@
       .video-container {
         padding-bottom: 100%; /* 1:1 aspect ratio for tiny mobile devices */
       }
+
+    /* Adjust font size for smaller screens */
+      .navbar-logo {
+        font-size: 20px;
+      }
+
+      .navbar-links span {
+        font-size: 16px;
+      }
+
+      /* Adjust margin for smaller screens */
+      .navbar-logo {
+        margin-right: 10px;
+      }
+
+      .navbar-links span {
+        margin-left: 5px;
+      }
+    }
+
+    /* Fixed header styles */
+    header {
+      position: sticky;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #333;
+      padding: 8px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #fff;
+      font-size: 12px;
+      font-weight: bold;
+      z-index: 1000; /* Set a higher z-index to keep it above other elements */
+    }
+
+    .navbar-logo {
+      font-size: 12px; /* Adjust the font size for the logo */
+      margin-left: 20px; /* Add right margin */
+      display: flex; /* Align items horizontally */
+      align-items: center; /* Center vertically */
+    }
+
+    .navbar-links {
+      display: inline-block;
+      margin-right: 20px;
+    }
+
+    .navbar-links span {
+      color: #fff;
+      margin-right: 0px;
+      font-size: 12px; /* Set font size for the header links */
+      cursor: pointer; /* Add cursor pointer to make it look like a link */
+    }
+
+    /* Custom paragraph style */
+    p {
+      font-style: italic;
+      text-align: center;
+      color: #999;
+      font-size: 12px;
+      margin-top: 35px;
     }
   </style>
 </head>
 <body>
-  <div class="container mt-5">
+  <header>
+    <!-- Your header text goes here -->
+    <div class="navbar-logo">
+      Stephen Fulton VS Naoya Inoue
+    </div>
+    <!-- Your navigation links go here -->
+    <span class="navbar-links">
+      <span>Stream: <strong class="text-success">1Stream</strong></span>
+      <span>Channel: <strong class="text-primary">PPV HD</strong></span>
+      <span>Quality: <strong class="text-danger">HD</strong></span>
+    </span>
+  </header>
+
+  <div class="container mt-4 pt-4">
     <div class="row justify-content-center">
       <div class="col-lg-8 col-md-10">
-        <h1 class="text-center mb-4">Live Stream Title</h1>
         <div class="video-container">
-          <iframe src="https://weakstream.org/mma-boxing/stephen-fulton-vs-naoya-inoue/125048/?sport=boxing" frameborder="0" allowfullscreen></iframe>
+          <iframe src="https://1stream.eu/title-game/stephen-fulton-vs-naoya-inoue-live-stream/7775?embed=1" frameborder="0" allowfullscreen="yes"></iframe>
         </div>
+        <!-- Your custom paragraph goes here -->
+        <p>This stream is absolutely free! If you've landed here via a paid site, make sure to ask for your money back.</p>
       </div>
     </div>
   </div>
@@ -65,7 +162,6 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script async src="https://arc.io/widget.min.js#gB28nKMV"></script>
 
   <script>
     // Optional: Auto-resize the iframe based on the window width
