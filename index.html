@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Stephen Fulton VS Naoya Inoue Live Stream</title>
+  <title>Embedded Live Stream</title>
   <!-- Add Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
   <!-- Add Google Fonts - Roboto -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
 
   <!-- Add meta viewport tags for responsiveness -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Add meta tags for SEO and website description -->
+  <meta name="description" content="Your website description goes here">
+  <meta name="keywords" content="your, keywords, here">
+  <meta name="author" content="Your Name">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  <!-- Add more meta tags if needed -->
 
   <style>
     /* Base styles */
@@ -22,7 +30,7 @@
 
     .video-container {
       position: relative;
-      padding-bottom: 56.25%; /* 16:9 aspect ratio (height/width) */
+      padding-top: 40%; /* Adjust the distance from the header */
       height: 0;
       overflow: hidden;
       border-radius: 8px;
@@ -43,31 +51,24 @@
     @media screen and (max-width: 1200px) {
       /* Adjust height for medium screens */
       .video-container {
-        padding-bottom: 60%; /* 16:9 aspect ratio for medium-sized devices */
+        padding-top: 50%; /* Adjust the distance from the header for medium screens */
       }
     }
 
     @media screen and (max-width: 992px) {
       /* Adjust height for small screens */
       .video-container {
-        padding-bottom: 70%; /* 16:9 aspect ratio for small screens */
+        padding-top: 56.25%; /* 16:9 aspect ratio for small screens */
       }
     }
 
     @media screen and (max-width: 768px) {
       /* Adjust height for smaller screens */
       .video-container {
-        padding-bottom: 80%; /* 4:3 aspect ratio for tablets and mobile devices */
-      }
-    }
-
-    @media screen and (max-width: 576px) {
-      /* Adjust height for even smaller screens */
-      .video-container {
-        padding-bottom: 100%; /* 1:1 aspect ratio for tiny mobile devices */
+        padding-top: 60%; /* Adjust the distance from the header for smaller screens */
       }
 
-    /* Adjust font size for smaller screens */
+      /* Adjust font size for smaller screens */
       .navbar-logo {
         font-size: 20px;
       }
@@ -86,6 +87,33 @@
       }
     }
 
+    @media screen and (max-width: 576px) {
+      /* Adjust height for even smaller screens */
+      .video-container {
+        padding-top: 75%; /* 4:3 aspect ratio for tiny mobile devices */
+      }
+
+      /* Adjust font size for tiny screens */
+      .navbar-logo {
+        font-size: 18px;
+      }
+
+      .navbar-links span {
+        font-size: 14px;
+      }
+
+      /* Adjust margin for tiny screens */
+      .navbar-logo {
+        margin-right: 5px;
+      }
+
+      .navbar-links span {
+        margin-left: 3px;
+      }
+    }
+
+    /* Custom styles */
+
     /* Fixed header styles */
     header {
       position: sticky;
@@ -93,32 +121,31 @@
       left: 0;
       width: 100%;
       background-color: #333;
-      padding: 8px 0;
+      padding: 10px 0;
       display: flex;
       align-items: center;
       justify-content: space-between;
       color: #fff;
-      font-size: 12px;
+      font-size: 18px;
       font-weight: bold;
       z-index: 1000; /* Set a higher z-index to keep it above other elements */
     }
 
     .navbar-logo {
-      font-size: 12px; /* Adjust the font size for the logo */
-      margin-left: 20px; /* Add right margin */
+      font-size: 24px; /* Adjust the font size for the logo */
+      margin-right: 20px; /* Add right margin */
       display: flex; /* Align items horizontally */
       align-items: center; /* Center vertically */
     }
 
     .navbar-links {
-      display: inline-block;
-      margin-right: 20px;
+      display: flex; /* Align items horizontally */
+      align-items: center; /* Center vertically */
     }
 
     .navbar-links span {
       color: #fff;
-      margin-right: 0px;
-      font-size: 12px; /* Set font size for the header links */
+      font-size: 18px; /* Set font size for the header links */
       cursor: pointer; /* Add cursor pointer to make it look like a link */
     }
 
@@ -127,33 +154,33 @@
       font-style: italic;
       text-align: center;
       color: #999;
-      font-size: 12px;
-      margin-top: 35px;
+      font-size: 16px;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
   <header>
-    <!-- Your header text goes here -->
-    <div class="navbar-logo">
-      Stephen Fulton VS Naoya Inoue
-    </div>
+    <!-- Your header logo goes here -->
+    <span class="navbar-logo">
+      <a href="#">Embedded Live Stream</a>
+    </span>
     <!-- Your navigation links go here -->
     <span class="navbar-links">
-      <span>Stream: <strong class="text-success">1Stream</strong></span>
-      <span>Channel: <strong class="text-primary">PPV HD</strong></span>
-      <span>Quality: <strong class="text-danger">HD</strong></span>
+      <span>Link 1</span>
+      <span>Link 2</span>
+      <span>Link 3</span>
     </span>
   </header>
 
   <div class="container mt-4 pt-4">
     <div class="row justify-content-center">
-      <div class="col-lg-8 col-md-10">
+      <div class="col-lg-10 col-md-12">
         <div class="video-container">
-          <iframe src="https://1stream.eu/title-game/stephen-fulton-vs-naoya-inoue-live-stream/7775?embed=1" frameborder="0" allowfullscreen="yes"></iframe>
+          <iframe src="URL_OF_YOUR_YOUTUBE_LIVE_STREAM" frameborder="0" allowfullscreen></iframe>
         </div>
         <!-- Your custom paragraph goes here -->
-        <p>This stream is absolutely free! If you've landed here via a paid site, make sure to ask for your money back.</p>
+        <p>This is some custom text in italics.</p>
       </div>
     </div>
   </div>
