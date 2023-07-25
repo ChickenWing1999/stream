@@ -2,6 +2,9 @@
 <html>
 <head>
   <title>Embedded Live Stream</title>
+  <!-- Add Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
   <style>
     /* Base styles */
     .video-container {
@@ -36,12 +39,19 @@
   </style>
 </head>
 <body>
-  <div class="video-container">
-    <iframe src="https://weakstream.org/mma-boxing/stephen-fulton-vs-naoya-inoue/125048/?sport=boxing" frameborder="0" allowfullscreen></iframe>
+  <div class="container">
+    <div class="video-container">
+      <iframe src="https://weakstream.org/mma-boxing/stephen-fulton-vs-naoya-inoue/125048/?sport=boxing" frameborder="0" allowfullscreen></iframe>
+    </div>
   </div>
 
+  <!-- Add jQuery and Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
   <script>
-    // Optional: Auto-resize the iframe based on the window height
+    // Optional: Auto-resize the iframe based on the window width
     function resizeIframe() {
       const iframe = document.querySelector('iframe');
       if (iframe) {
