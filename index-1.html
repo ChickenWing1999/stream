@@ -9,7 +9,9 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
 
   <!-- Add meta viewport tags for responsiveness -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   
   <!-- Add meta tags for SEO and website description -->
   <meta name="description" content="Your website description goes here">
@@ -121,8 +123,8 @@
         font-size: 16px; /* Adjust the font size for the logo on smaller screens */
       }
 
-      .navbar-links a {
-        font-size: 14px; /* Adjust the font size for the header links on smaller screens */
+      .navbar-links {
+        display: none; /* Hide the navigation links on smaller screens */
       }
 
       .search-box {
@@ -137,6 +139,21 @@
       .card-title {
         font-size: 20px; /* Adjust the font size for card titles on smaller screens */
       }
+
+      /* Dropdown menu styles */
+      .navbar-dropdown {
+        display: block; /* Show the dropdown menu on smaller screens */
+      }
+
+      .navbar-dropdown li {
+        margin-right: 0; /* Remove the margin between dropdown links */
+      }
+
+      .navbar-dropdown a {
+        display: block; /* Set links to block to take full width of dropdown */
+        padding: 10px; /* Add padding to each dropdown link */
+        text-align: center; /* Center the dropdown links */
+      }
     }
   </style>
 </head>
@@ -148,6 +165,12 @@
     </div>
     <!-- Your navigation links go here -->
     <ul class="navbar-links">
+      <li><a href="#">Link 1</a></li>
+      <li><a href="#">Link 2</a></li>
+      <li><a href="#">Link 3</a></li>
+    </ul>
+    <!-- Mobile dropdown menu for navigation links -->
+    <ul class="navbar-dropdown">
       <li><a href="#">Link 1</a></li>
       <li><a href="#">Link 2</a></li>
       <li><a href="#">Link 3</a></li>
