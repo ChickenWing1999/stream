@@ -1,62 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Timer Redirect</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="countdown.js"></script>
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-  <script>
-    // Your reCAPTCHA site key
-    var recaptchaSiteKey = "6LdeWWgnAAAAADxDHcwGHVqLD76CBubomImCNP7-";
-
-    // Function to redirect to the original URL
-    function redirectToOriginalURL() {
-      window.location.href = "https://www.google.com"; // Replace this with your desired URL
-    }
-
-    // Function to start the timer and show the button after reCAPTCHA is solved
-    function startTimer() {
-      // Set up the countdown timer
-      var timerDisplay = document.getElementById("timer");
-      var seconds = 20; // Change this value to set the time in seconds
-
-      var countdown = new Countdown(
-        new Date().getTime() + seconds * 1000,
-        function (ts) {
-          timerDisplay.textContent = ts.toHTML("strong");
-        },
-        function () {
-          showButton();
-        },
-        0
-      );
-    }
-
-    // Function to show the button after reCAPTCHA is solved
-    function showButton() {
-      var buttonContainer = document.getElementById("button-container");
-      buttonContainer.innerHTML = '<button onclick="redirectToOriginalURL()">Continue</button>';
-    }
-
-    // Callback function when reCAPTCHA is solved
-    function onRecaptchaSuccess() {
-      showButton();
-    }
-  </script>
+  <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Timer</title>
+<script src="https://www.google.com/recaptcha/api.js"></script>
 </head>
-<body onload="startTimer()">
-  <div class="container">
-    <h1>Timer Redirect</h1>
-    <div class="timer-container">
-      <div class="timer">
-        <span id="timer">10</span>
-      </div>
-    </div>
-    <div class="recaptcha-container">
-      <!-- Replace YOUR_RECAPTCHA_SITE_KEY with your actual site key -->
-      <div class="g-recaptcha" data-sitekey="6LdeWWgnAAAAADxDHcwGHVqLD76CBubomImCNP7-" data-callback="onRecaptchaSuccess"></div>
-    </div>
-    <div id="button-container"></div>
-  </div>
+<body>
+<h1>Timer</h1>
+<p>This page will redirect to the original URL after {} seconds.</p>
+<div class="g-recaptcha" data-sitekey="6LdeWWgnAAAAADxDHcwGHVqLD76CBubomImCNP7-"></div>
+<button id="submit" disabled>Redirect</button>
+<script>
+var timer = {}
+var interval = null
+
+function startTimer() {
+  timer = new Date()
+  interval = setInterval(function() {
+    var now = new Date()
+    var remainingSeconds = (timer.getTime() - now.getTime()) / 1000
+    document.querySelector("p").innerHTML = remainingSeconds + " seconds"
+    if (remainingSeconds <= 0) {
+      clearInterval(interval)
+      window.location.href = "https://www.example.com"
+    }
+  }, 1000)
+}
+
+function onSubmit() {
+  grecaptcha.getResponse().then(function(response) {
+    if (response) {
+      startTimer()
+      document.getElementById("submit").disabled = true
+    }
+  })
+}
+
+document.querySelector("#submit").addEventListener("click", onSubmit)
+</script>
 </body>
 </html>
