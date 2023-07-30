@@ -1,104 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Responsive Website with Ad Units</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Timer Redirect</title>
+  <script>
+    // Function to redirect to the original URL
+    function redirectToOriginalURL() {
+      window.location.href = "https://www.google.com"; // Replace this with your desired URL
+    }
 
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-        }
+    // Function to start the timer and redirect after a specified time
+    function startTimer() {
+      var seconds = 16; // Change this value to set the time in seconds
+      var timerDisplay = document.getElementById("timer");
 
-        main {
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+      var countdown = setInterval(function() {
+        seconds--;
+        timerDisplay.textContent = seconds;
 
-        h1 {
-            color: #333;
+        if (seconds <= 0) {
+          clearInterval(countdown);
+          redirectToOriginalURL();
         }
-
-        .content {
-            margin-bottom: 30px;
-        }
-
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-        }
-
-        @media (max-width: 600px) {
-            .ad-unit {
-                width: 100%;
-            }
-        }
-    </style>
+      }, 1000); // 1000 milliseconds = 1 second
+    }
+  </script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+  </style>
 </head>
-<body>
-    <header>
-        <h1>Welcome to My Website</h1>
-    </header>
-
-    <main>
-        <section class="content">
-            <h2>About Us</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus et suscipit mi. Nulla facilisi. Proin eu sapien et velit scelerisque congue. Nulla facilisi. Proin at dolor at nisi aliquam accumsan eu nec purus.</p>
-        </section>
-
-        <!-- Ad Unit 1 -->
-        <div style="width: 160px; height: 600px; background-color: #f1f1f1;">
-            <!-- Insert your ad code for Ad Unit 1 here -->
-            <!-- For example: <script type="text/javascript" src="your-ad-script-1.js"></script> -->
-          <script>
-(function(ufci){
-var d = document,
-    s = d.createElement('script'),
-    l = d.scripts[d.scripts.length - 1];
-s.settings = ufci || {};
-s.src = "\/\/mintybug.com\/bDX\/Vasfd.GClE0eYUWEd-i_YhWQ5TuxZqX\/IA\/peSmL9\/ueZwULlDkPPRT\/QC3cOlDkc\/4eMjzMEGtUNnD\/cz4IN\/zKgFz\/MLgr";
-l.parentNode.insertBefore(s, l);
-})({})
-</script>
-        </div>
-
-
-        <section class="content">
-            <h2>Our Services</h2>
-            <ul>
-                <li>Service 1</li>
-                <li>Service 2</li>
-                <li>Service 3</li>
-            </ul>
-        </section>
-
-        <!-- Ad Unit 2 -->
-        <div class="ad-unit">
-            <img src="https://via.placeholder.com/728x90" alt="Ad Unit 2 Placeholder">
-            <!-- Insert your ad code for Ad Unit 2 here -->
-            <!-- For example: <script type="text/javascript" src="your-ad-script-2.js"></script> -->
-        </div>
-
-        <section class="content">
-            <h2>Contact Us</h2>
-            <p>If you have any questions or inquiries, please feel free to contact us.</p>
-            <p>Email: info@example.com</p>
-            <p>Phone: +1 123-456-7890</p>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2023 My Website. All rights reserved.</p>
-    </footer>
-    <script data-cfasync="false" type="text/javascript" src="//brightonclick.com/a/display.php?r=7179126"></script>
+<body onload="startTimer()">
+  <h1>Timer Redirect</h1>
+  <p>Redirecting in <span id="timer">5</span> seconds...</p>
 </body>
 </html>
