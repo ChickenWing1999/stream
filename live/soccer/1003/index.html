@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://arc.io/widget.min.js#pTEJaFRA"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7455422279459193"
+     crossorigin="anonymous"></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Page Not Found</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: "Roboto", Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #f9f9f9;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        a {
+            color: #007BFF;
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+        }
+
+        /* Search box styles */
+        #search-form {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #search-input {
+            padding: 10px 15px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px 0 0 5px;
+            outline: none;
+        }
+
+        #search-input::placeholder {
+            color: #aaa;
+        }
+
+        #search-btn {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #007BFF;
+            color: #fff;
+            border: 1px solid #007BFF;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        #search-btn:hover {
+            background-color: #0056b3;
+        }
+    /* New styles for countdown timer */
+    #countdown {
+            font-size: 1.2rem;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        /* New styles for error message */
+        #error-message {
+            color: #e74c3c;
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Page Not Found</h1>
+        <p>The page you are looking for does not exist.</p>
+        <p>Return to <a href="https://www.highwaycpmrevenue.com/bxzsxffdj?key=5b1272b64c309b6ec48b9bec59117e61">homepage</a></p>
+        <form id="search-form">
+            <input type="text" id="search-input" placeholder="Enter keywords...">
+            <button type="submit" id="search-btn">Search</button>
+            <p id="error-message"></p>
+        </form>
+        <p id="countdown"></p>
+    </div>
+
+    <script>
+        // Custom URL to your website's homepage
+        const homepageURL = "https://www.google.com/";
+
+        // Countdown timer function
+        function startCountdown() {
+            let timeLeft = 30;
+            const countdownElement = document.getElementById("countdown");
+            countdownElement.textContent = `Redirecting in ${timeLeft} seconds`;
+
+            const countdownInterval = setInterval(() => {
+                timeLeft--;
+                countdownElement.textContent = `Redirecting in ${timeLeft} seconds`;
+                if (timeLeft === 0) {
+                    clearInterval(countdownInterval);
+                    window.location.href = homepageURL;
+                }
+            }, 1000);
+        }
+
+        // Script to handle the search form submission with client-side validation
+        document.getElementById("search-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const searchInput = document.getElementById("search-input").value.trim();
+            const errorMessage = document.getElementById("error-message");
+            if (searchInput.length === 0) {
+                errorMessage.textContent = "Please enter keywords to search.";
+                return;
+            }
+            // Clear any previous error message
+            errorMessage.textContent = "";
+
+            // Modify the URL and redirect to your site's search page or Google search, etc.
+            window.location.href = homepageURL + "search?q=" + encodeURIComponent(searchInput);
+        });
+
+        // Start the countdown timer when the page loads
+        startCountdown();
+    </script>
+</body>
+</html>
