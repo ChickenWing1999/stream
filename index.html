@@ -45,31 +45,28 @@
     }
 
     .hero {
-      background-image: url('https://www.solidbackgrounds.com/images/7680x4320/7680x4320-black-solid-color-background.jpg');
-      background-size: cover;
-      background-position: center;
-      min-height: 50vh;
+      background-color: #333;
+      height: 80vh;
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
+      color: #fff;
     }
 
     .hero h1 {
       font-size: 3rem;
       margin-bottom: 1rem;
-      color: #fff;
     }
 
     .hero p {
       font-size: 1.2rem;
-      color: #eee;
     }
 
     .btn {
       display: inline-block;
-      background-color: #333;
-      color: #fff;
+      background-color: #fff;
+      color: #333;
       padding: 0.8rem 1.5rem;
       text-decoration: none;
       border: none;
@@ -79,7 +76,7 @@
     }
 
     .btn:hover {
-      background-color: #555;
+      background-color: #eee;
     }
 
     .features {
@@ -194,5 +191,48 @@ Join 1Stream today and experience the thrill of live sports streaming like never
   </footer>
 
   <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+  <script>
+    // Script for responsive navigation
+    const toggleNav = () => {
+      const navList = document.querySelector('nav ul');
+      navList.classList.toggle('active');
+    };
+
+    const navToggle = document.querySelector('.nav-toggle');
+    navToggle.addEventListener('click', toggleNav);
+
+    // Script for smooth scrolling to sections
+    const smoothScroll = (target) => {
+      const element = document.querySelector(target);
+      const navHeight = document.querySelector('header').offsetHeight;
+      const position = element.getBoundingClientRect().top;
+      const offsetPosition = position - navHeight;
+
+      window.scrollBy({
+        top: offsetPosition,
+        behavior: 'smooth',
+      });
+    };
+
+    const scrollLinks = document.querySelectorAll('nav ul li a');
+    scrollLinks.forEach(link => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        const target = link.getAttribute('href');
+        smoothScroll(target);
+      });
+    });
+
+    // Script to disable button after click
+    const buttons = document.querySelectorAll('.btn');
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        button.disabled = true;
+        button.textContent = 'Processing...';
+      });
+    });
+  </script>
+</body>
+</html>
 </body>
 </html>
