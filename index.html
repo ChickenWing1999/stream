@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://arc.io/widget.min.js#pTEJaFRA"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7455422279459193"
+     crossorigin="anonymous"></script>
+     <meta charset="utf-8" />
+     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>1Stream - Watch Live Streams of NBA, NFL, Boxing, MMA, Soccer and More!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: "Roboto", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #ffffff;
+            background-color: #121212;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #1a1a1a;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin: 0 15px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav li {
+            margin: 0 15px;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.2s ease-in-out;
+        }
+
+        nav a:hover {
+            color: #4CAF50;
+        }
+
+        .hero {
+            background-color: #1a1a1a;
+            padding: 200px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 20px;
+            font-family: "Oswald", Arial, sans-serif;
+            color: #4CAF50;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta {
+            background-color: #121212;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 3.5rem;
+            margin-bottom: 30px;
+            font-family: "Oswald", Arial, sans-serif;
+            color: #4CAF50;
+        }
+
+        .cta p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .features {
+            background-color: #1a1a1a;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .features h2 {
+            font-size: 3.5rem;
+            margin-bottom: 30px;
+            color: #4CAF50;
+            font-family: "Oswald", Arial, sans-serif;
+        }
+
+        .features ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .features li {
+            margin: 0 20px;
+        }
+
+        .features li:before {
+            content: "\2022";
+            color: #4CAF50;
+            margin-right: 10px;
+        }
+
+        .about {
+            background-color: #1a1a1a;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 3.5rem;
+            margin-bottom: 30px;
+            color: #4CAF50;
+            font-family: "Oswald", Arial, sans-serif;
+        }
+
+        .about p {
+            font-size: 1.2rem;
+            color: #ffffff; /* Dark green text color */
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact {
+            background-color: #121212;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 3.5rem;
+            margin-bottom: 30px;
+            color: #4CAF50;
+            font-family: "Oswald", Arial, sans-serif;
+        }
+
+        .contact p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+            margin: 0 auto;
+            margin-top: 30px;
+        }
+
+        .contact label {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .contact input,
+        .contact textarea {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ffffff;
+            border-radius: 5px;
+            background-color: transparent;
+            color: #ffffff;
+            outline: none;
+        }
+
+        .contact textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .contact button {
+            padding: 12px 25px;
+            background-color: #4CAF50;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+            outline: none;
+        }
+
+        .contact button:hover {
+            background-color: #45A049;
+        }
+
+        footer {
+            background-color: #1a1a1a;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin: 0;
+            color: #cccccc;
+        }
+
+        /* Elements with this class will have a fade-in effect */
+        .fade-in {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        /* Elements with this class will be fully visible after the fade-in effect */
+        .visible {
+            opacity: 1;
+        }
+
+        /* Contact and Footer styles */
+        .contact {
+            padding: 30px 0;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 1200px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+
+            .hero p,
+            .cta p,
+            .about p,
+            .contact p {
+                font-size: 1rem;
+            }
+
+            .features h2,
+            .about h2,
+            .contact h2 {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero p,
+            .cta p,
+            .about p,
+            .contact p {
+                font-size: 1rem;
+            }
+
+            .features h2,
+            .about h2,
+            .contact h2 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+    <script>
+        // Smooth scrolling for anchor links
+        document.addEventListener('DOMContentLoaded', function() {
+            const anchorLinks = document.querySelectorAll('a[href^="#"]');
+            anchorLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    const headerOffset = 100;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition - headerOffset;
+
+                    window.scrollBy({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span>1Stream</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#cta">Call-to-Action</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Ad Container -->
+    <div class="ad-container">
+        <!-- Place your ad script here -->
+        <!-- For example, using Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7455422279459193"
+     crossorigin="anonymous"></script>
+        <!-- 1001 -->
+        <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-7455422279459193"
+        data-ad-slot="8327040674"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    </div>
+
+    <div class="hero fade-in">
+        <h1>Welcome to 1Stream</h1>
+        <p>Welcome to 1Stream, your gateway to an unparalleled streaming adventure! Immerse yourself in a world of endless entertainment and captivating content tailored to your unique tastes. With our cutting-edge platform, you'll gain access to an extensive library of movies, TV shows, live events, and exclusive original series. Experience buffer-free, high-quality streaming across all your devices, allowing you to enjoy your favorite content anytime, anywhere. Join our vibrant community of passionate streamers and be part of the next generation of online entertainment. Discover the thrill of 1Stream today and elevate your streaming experience to new heights. Don't miss this opportunity to embark on an unforgettable journey through the realm of boundless entertainment!</p>
+    </div>
+
+    <div class="cta fade-in" id="cta">
+        <h2>Call-to-Action</h2>
+        <p>Experience the ultimate in online streaming with 1Stream! Join now to unlock a world of entertainment, live events, and exclusive content. Don't miss out on this one-of-a-kind streaming platform. Sign up today and dive into a seamless streaming experience like never before!</p>
+    </div>
+
+    <div class="features fade-in" id="features">
+        <h2>Features</h2>
+        <ul>
+            <li>High-Quality</li>
+            <li>Buffer-Free</li>
+            <li>Interactive</li>
+            <li>Exclusive Content</li>
+        </ul>
+    </div>
+
+    <div class="about fade-in" id="about">
+        <h2>About Us</h2>
+        <p>1Stream is an innovative online sports live streaming platform that provides sports enthusiasts with an unparalleled experience to watch their favorite games and events in real-time. Our platform is dedicated to delivering high-quality, buffer-free streams of various sports, ensuring fans never miss a moment of the action.<br>Whether you're a die-hard supporter of popular sports leagues or have a passion for niche athletic events, 1Stream caters to a wide range of sports, offering a diverse selection of matches from around the globe. From football and basketball to cricket and tennis, we cover it all, bringing thrilling sports action right to your screen.<br>With user-friendly features, viewers can engage with the streaming experience through live chat, commentaries, and social interactions, fostering a vibrant community of sports enthusiasts. Whether you're cheering for your team or discussing game strategies with fellow fans, 1Stream creates an immersive atmosphere for sports lovers to connect and share their excitement.<br>Join 1Stream today and experience the thrill of live sports streaming like never before. With our platform, every sports fan can be front and center, witnessing every thrilling play and cheering on their favorite athletes from the comfort of their own devices. Let the games begin!</p>
+    </div>
+
+    <div class="contact fade-in" id="contact">
+        <h2>Contact Us</h2>
+        <p>Have a question or want to get in touch? Fill out the form below:</p>
+        <form>
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Your Name">
+
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Your Email">
+
+            <label for="message">Message</label>
+            <textarea id="message" placeholder="Your Message"></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+   <!-- Footer placed correctly after all other content -->
+   <footer class="fade-in">
+        <p>&copy; 2023 1Stream. All Rights Reserved.</p>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Your custom scripts -->
+    <script>
+        // Function to check if an element is in the viewport
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        // Function to add class "visible" to elements when they are in the viewport
+        function handleVisibility() {
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach(el => {
+                if (isElementInViewport(el)) {
+                    el.classList.add('visible');
+                }
+            });
+
+            // Check if the footer is in the viewport
+            const footer = document.querySelector('footer');
+            if (isElementInViewport(footer)) {
+                footer.classList.add('visible');
+            }
+        }
+
+        // Call the handleVisibility function when the page loads
+        $(document).ready(function() {
+            handleVisibility();
+        });
+
+        // Call the handleVisibility function when the user scrolls
+        $(window).scroll(function() {
+            handleVisibility();
+        });
+    </script>
+</body>
+</html>
