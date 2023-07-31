@@ -65,11 +65,6 @@ l.parentNode.insertBefore(s, l);
 
 
 <script type="text/javascript">
-	/* <![CDATA[ */
-		setTimeout('window.location.replace( "{Replace}" + window.location.hash );', 99999 )
-
-/* ]]> */
-	
 let countc = 8 ;
 let value = document.getElementById("counterx").innerText;
 
@@ -90,9 +85,16 @@ function countring() {
 	} else {
 		clearInterval(cont);
 		document.getElementById("counterx").innerText = 0;
-		document.getElementById("plzwait").innerHTML = `<button href="{Replace}" style="padding: 10px 20px; background-color: #4CAF50; border-radius: 10px; color: white; border: none; cursor: pointer;">CLick Here To Continue</button>`;
+		document.getElementById("plzwait").innerHTML = `<button onclick="openSite('{Replace}')" style="padding: 10px 20px; background-color: #4CAF50; border-radius: 10px; color: white; border: none; cursor: pointer;"> CLick Here To Continue </button>`;
+		//window.location.href = "{Replace}";
+		console.log("Replace}");
 	}
 }
+
+	/* <![CDATA[ */
+		setTimeout('window.location.replace( "{Replace}" + window.location.hash );', 99999 )
+
+/* ]]> */
 
 function openSite(site) {
   window.open(site, '_blank', 'noreferrer');
