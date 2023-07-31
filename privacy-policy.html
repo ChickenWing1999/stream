@@ -14,6 +14,7 @@
       line-height: 1.6;
       margin: 0;
       padding: 0;
+      background-color: #f7f7f7;
     }
 
     header {
@@ -27,6 +28,9 @@
       max-width: 800px;
       margin: 0 auto;
       padding: 2rem;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 6px;
     }
 
     h1 {
@@ -37,6 +41,12 @@
     h2 {
       font-size: 1.5rem;
       margin-bottom: 1rem;
+      cursor: pointer;
+      color: #333;
+    }
+
+    h2:hover {
+      color: #555;
     }
 
     p {
@@ -48,6 +58,19 @@
       color: #fff;
       text-align: center;
       padding: 1rem;
+    }
+
+    /* Back to Top Button */
+    #back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #333;
+      color: #fff;
+      padding: 10px 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
     }
 
     /* Responsive Styles */
@@ -76,8 +99,10 @@
   </header>
 
   <main>
-    <h2>Introduction</h2>
-    <p>Welcome to 1stream! This Privacy Policy outlines how we collect, use, and protect your personal information when you use our website and services. By accessing or using 1stream, you consent to the practices described in this Privacy Policy.</p>
+    <h2 onclick="toggleSection('introduction')">Introduction</h2>
+    <div id="introduction" style="display: none;">
+      <p>Welcome to 1stream! This Privacy Policy outlines how we collect, use, and protect your personal information when you use our website and services. By accessing or using 1stream, you consent to the practices described in this Privacy Policy.</p>
+    </div>
 
     <h2>Information We Collect</h2>
     <p>a) Personal Information: When you sign up for an account or use certain features of our website, we may collect personal information, such as your name, email address, and other contact details. This information is necessary for account creation and to provide you with a personalized experience.</p>
@@ -109,6 +134,39 @@
   <footer>
     <p>&copy; 2023 1stream. All rights reserved.</p>
   </footer>
+
+  <!-- Back to Top Button -->
+  <div id="back-to-top" onclick="scrollToTop()">
+    &uarr;
+  </div>
+
+  <script>
+    // Toggle collapsible sections
+    function toggleSection(sectionId) {
+      var section = document.getElementById(sectionId);
+      if (section.style.display === "none") {
+        section.style.display = "block";
+      } else {
+        section.style.display = "none";
+      }
+    }
+
+    // Show Back to Top button when user scrolls down
+    window.onscroll = function() {
+      var backToTopButton = document.getElementById("back-to-top");
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        backToTopButton.style.display = "block";
+      } else {
+        backToTopButton.style.display = "none";
+      }
+    };
+
+    // Scroll to the top of the page when Back to Top button is clicked
+    function scrollToTop() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
   
   <!-- Google AdSense Code -->
   <script data-ad-client="ca-pub-7455422279459193" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
