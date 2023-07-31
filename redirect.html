@@ -8,7 +8,7 @@
      crossorigin="anonymous"></script>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
-    <meta http-equiv="Refresh" content="1; url={Replace}" />
+    <meta http-equiv="Refresh" content="8; url={Replace}" />
     <meta name="referrer" content="no-referrer" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -67,7 +67,7 @@ l.parentNode.insertBefore(s, l);
 <script type="text/javascript">
 	/* <![CDATA[ */
 
-etTimeout('window.location.replace( "{Replace}" + window.location.hash );', 1000 )
+setTimeout('window.location.replace( "{Replace}" + window.location.hash );', 8000 )
 
 /* ]]> */
 	
@@ -91,9 +91,7 @@ function countring() {
 	} else {
 		clearInterval(cont);
 		document.getElementById("counterx").innerText = 0;
-		document.getElementById("plzwait").innerHTML = `<p><button onclick="openSite('https://sh.linkfly.workers.dev/')" style="padding: 10px 20px; background-color: #4CAF50; border-radius: 10px; color: white; border: none; cursor: pointer;"><p>Redirecting..<br /><a href="{Replace}">{Replace}</a></button></p>`;
-		//window.location.href = "https://sh.linkfly.workers.dev/";
-		console.log("https://sh.linkfly.workers.dev/");
+		document.getElementById("plzwait").innerHTML = `<button style="padding: 10px 20px; background-color: #4CAF50; border-radius: 10px; color: white; border: none; cursor: pointer;">CLick Here To Continue<a href="{Replace}">{Replace}</a></button>`;
 	}
 }
 
@@ -102,6 +100,7 @@ function openSite(site) {
 }
 cont = setInterval(countring, 1000);
 </script>
+	
 </body>
 </html>
 
