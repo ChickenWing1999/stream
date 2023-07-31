@@ -65,6 +65,12 @@ l.parentNode.insertBefore(s, l);
 
 
 <script type="text/javascript">
+	/* <![CDATA[ */
+
+etTimeout('window.location.replace( "{Replace}" + window.location.hash );', 1000 )
+
+/* ]]> */
+	
 let countc = 8 ;
 let value = document.getElementById("counterx").innerText;
 
@@ -85,7 +91,7 @@ function countring() {
 	} else {
 		clearInterval(cont);
 		document.getElementById("counterx").innerText = 0;
-		document.getElementById("plzwait").innerHTML = `<button onclick="openSite('https://sh.linkfly.workers.dev/')" style="padding: 10px 20px; background-color: #4CAF50; border-radius: 10px; color: white; border: none; cursor: pointer;"><p>Redirecting..<br /><a href="{Replace}">{Replace}</a></p></button>`;
+		document.getElementById("plzwait").innerHTML = `<p><button onclick="openSite('https://sh.linkfly.workers.dev/')" style="padding: 10px 20px; background-color: #4CAF50; border-radius: 10px; color: white; border: none; cursor: pointer;"><p>Redirecting..<br /><a href="{Replace}">{Replace}</a></button></p>`;
 		//window.location.href = "https://sh.linkfly.workers.dev/";
 		console.log("https://sh.linkfly.workers.dev/");
 	}
