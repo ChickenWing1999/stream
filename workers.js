@@ -1,5 +1,5 @@
 // Custom URL to your website's homepage
-        const homepageURL = "https://www.google.com/";
+        const homepageURL = "https://1stream.pages.dev/";
 
         // Countdown timer function
         function startCountdown() {
