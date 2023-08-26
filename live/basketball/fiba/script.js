@@ -5,7 +5,26 @@ document.addEventListener("DOMContentLoaded", () => {
     watchButton.addEventListener("click", () => {
         const selectedGame = document.getElementById("gameSelect").value;
         const liveStreamId = getLiveStreamId(selectedGame);
+        const vastAdTag = "https://likely-interaction.com/dumrF.zSdpGVNcvDZnGXUy/Pegme9cuCZ/UolXkpP/TkQS3GOmDjca4PN/jakdt_NaDpcc4rNUz/gW3ZM/Az"; // Replace with actual VAST ad tag URL
 
+        videoAdContainer.css("display", "block");
+
+        // Initialize Video.js player with VAST/VPAID plugin
+        const player = videojs('videoAdContainer');
+        player.vast({
+            url: vastAdTag,
+            adCancelTimeout: 5000, // Timeout to skip ad after 5 seconds
+            adsEnabled: true,
+            autoPlayAdBreaks: true
+        });
+
+        player.on("vast.adEnd", function() {
+            videoAdContainer.css("display", "none");
+            streamContainer.css("display", "block");
+            streamContainer.html(`<iframe src="${liveStreamUrl}" width="100%" height="400" frameborder="0"></iframe>`);
+            scrollTo(streamContainer);
+        });
+    
         if (liveStreamId) {
             streamContainer.style.display = "block"; // Show the live streaming container
             streamContainer.innerHTML = `<iframe src="https://${liveStreamId}" width="100%" height="420" marginheight="0" marginwidth="0" scrolling="no" frameborder="0" allowfullscreen="yes"  allow="encrypted-media"></iframe>`;
@@ -36,16 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
         };
 
         return gameStreamMap[game] || null;
-    }
-
-    function checkLiveStreamAvailability(url, callback) {
-        // You need to implement the logic to check if the live stream is available
-        // This might involve making an AJAX request to the streaming server or API
-        // For demonstration purposes, let's assume it's available after a short delay
-        setTimeout(function() {
-            const isAvailable = Math.random() < 0.8; // 80% chance of availability
-            callback(isAvailable);
-        }, 2000); // Simulate a 2-second delay
     }
 
     function scrollTo(element) {
