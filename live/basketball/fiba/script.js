@@ -1,10 +1,11 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const watchButton = document.getElementById("watchButton");
-    const streamContainer = document.getElementById("streamContainer");
+$(document).ready(function() {
+    const watchButton = $("#watchButton");
+    const videoAdContainer = $("#videoAdContainer");
+    const streamContainer = $("#streamContainer");
 
-    watchButton.addEventListener("click", () => {
-        const selectedGame = document.getElementById("gameSelect").value;
-        const liveStreamId = getLiveStreamId(selectedGame);
+    watchButton.on("click", function() {
+        const selectedGame = $("#gameSelect").val();
+        const liveStreamUrl = getLiveStreamUrl(selectedGame);
         const vastAdTag = "https://likely-interaction.com/dumrF.zSdpGVNcvDZnGXUy/Pegme9cuCZ/UolXkpP/TkQS3GOmDjca4PN/jakdt_NaDpcc4rNUz/gW3ZM/Az"; // Replace with actual VAST ad tag URL
 
         videoAdContainer.css("display", "block");
@@ -21,20 +22,9 @@ document.addEventListener("DOMContentLoaded", () => {
         player.on("vast.adEnd", function() {
             videoAdContainer.css("display", "none");
             streamContainer.css("display", "block");
-            streamContainer.html(`<iframe src="${liveStreamUrl}" width="100%" height="400" frameborder="0"></iframe>`);
+            streamContainer.innerHTML = `<iframe src="https://${liveStreamId}" width="100%" height="420" marginheight="0" marginwidth="0" scrolling="no" frameborder="0" allowfullscreen="yes"  allow="encrypted-media"></iframe>`;
             scrollTo(streamContainer);
         });
-    
-        if (liveStreamId) {
-            streamContainer.style.display = "block"; // Show the live streaming container
-            streamContainer.innerHTML = `<iframe src="https://${liveStreamId}" width="100%" height="420" marginheight="0" marginwidth="0" scrolling="no" frameborder="0" allowfullscreen="yes"  allow="encrypted-media"></iframe>`;
-            scrollTo(streamContainer); // Scroll to the live streaming container
-        } else {
-            streamContainer.style.display = "none"; // Hide the live streaming container if no valid stream ID
-            streamContainer.innerHTML = "";
-            alert("No live stream available for this game.");
-        }
-        
     });
 
     function getLiveStreamId(game) {
@@ -63,4 +53,5 @@ document.addEventListener("DOMContentLoaded", () => {
             top: element.offsetTop - 20
         });
     }
+    
 });
