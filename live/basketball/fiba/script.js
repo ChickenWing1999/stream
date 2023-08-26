@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
             game5: "venezuela-slovenia-live-stream/681956?embed=1",
             game6: "serbia-china-live-stream/681952?embed=1",
             game7: "usa-new-zealand-live-stream/681954?embed=1",
-            game8: "?embed=1",
+            game8: "",
             // Add more mappings here
         };
 
