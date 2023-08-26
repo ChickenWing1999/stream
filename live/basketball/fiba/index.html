@@ -22,6 +22,56 @@
         .container {
             text-align: center;
         }
+	
+	.container1 {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+		
+select, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+select:hover, button:hover {
+    background-color: #d1d8e0;
+}
+
+.stream-container {
+    display: none;
+    margin-top: 20px;
+    border: 1px solid #e9ecef;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+		
+select {
+    padding: 0.375rem 0.75rem;
+}
+
+button {
+    padding: 0.375rem 0.75rem;
+}
+		
         #status {
             font-size: 1.5em;
             margin-bottom: 1em;
@@ -119,7 +169,7 @@ l.parentNode.insertBefore(s, l);
             </div>
         </nav>
         <br>
-    <div class="container">
+    <div class="container1">
         <h2>Select a Game to Watch</h2>
         <form>
             <select id="gameSelect">
