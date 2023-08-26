@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basketball Game Schedule</title>
+    <link rel="stylesheet">
+  <style>
+
+/* Reset some default styles */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+select, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Customize the live streaming container */
+.stream-container {
+    display: none;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+    
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Basketball Game Schedule</h1>
+    </header>
+    <div class="container">
+        <h2>Select a Game to Watch</h2>
+        <form>
+            <select id="gameSelect">
+                <option value="game1">Game 1</option>
+                <option value="game2">Game 2</option>
+                <option value="game3">Game 3</option>
+                <!-- Add more game options here -->
+            </select>
+            <button type="button" id="watchButton">Watch Live</button>
+        </form>
+        <div id="streamContainer" class="stream-container">
+            <!-- The live streaming content will be displayed here -->
+        </div>
+    </div>
+    
+    <script>
+
+document.addEventListener("DOMContentLoaded", () => {
+    const watchButton = document.getElementById("watchButton");
+    const streamContainer = document.getElementById("streamContainer");
+
+    watchButton.addEventListener("click", () => {
+        const selectedGame = document.getElementById("gameSelect").value;
+        // Replace the following line with actual live streaming code
+        streamContainer.style.display = "block"; // Show the live streaming container
+        streamContainer.innerHTML = `<iframe src="https://example.com/live-stream/${selectedGame}" width="100%" height="400" frameborder="0"></iframe>`;
+    });
+});
+
+      
+    </script>
+</body>
+</html>
