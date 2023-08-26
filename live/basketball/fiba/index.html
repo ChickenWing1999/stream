@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Basketball Game Schedule</title>
     <link rel="stylesheet">
-  <style>
-
-/* Reset some default styles */
+    <style>
+    /* Reset some default styles */
 body, h1, h2, p {
     margin: 0;
     padding: 0;
@@ -62,8 +61,7 @@ button:hover {
     border-radius: 5px;
     overflow: hidden;
 }
-    
-    </style>
+</style>
 </head>
 <body>
     <header>
@@ -86,20 +84,37 @@ button:hover {
     </div>
     
     <script>
-
-document.addEventListener("DOMContentLoaded", () => {
+        document.addEventListener("DOMContentLoaded", () => {
     const watchButton = document.getElementById("watchButton");
     const streamContainer = document.getElementById("streamContainer");
 
     watchButton.addEventListener("click", () => {
         const selectedGame = document.getElementById("gameSelect").value;
-        // Replace the following line with actual live streaming code
-        streamContainer.style.display = "block"; // Show the live streaming container
-        streamContainer.innerHTML = `<iframe src="https://streamingnow.pro/tvon.php?hd=86/${selectedGame}" width="100%" height="500px" marginheight="0" marginwidth="0" scrolling="no" frameborder="0" allowfullscreen  allow="encrypted-media"></iframe>`;
-    });
-});
+        const liveStreamId = getLiveStreamId(selectedGame);
 
-      
+        if (liveStreamId) {
+            streamContainer.style.display = "block"; // Show the live streaming container
+            streamContainer.innerHTML = `<iframe src="https://example.com/live-stream/${liveStreamId}" width="100%" height="400" frameborder="0"></iframe>`;
+        } else {
+            streamContainer.style.display = "none"; // Hide the live streaming container if no valid stream ID
+            streamContainer.innerHTML = "";
+            alert("No live stream available for this game.");
+        }
+    });
+
+    function getLiveStreamId(game) {
+        // Replace this with your actual logic to fetch the live stream ID for the selected game
+        // You might use an object or a database to store the mapping of game IDs to live stream IDs
+        const gameStreamMap = {
+            game1: "stream_id_1",
+            game2: "stream_id_2",
+            game3: "stream_id_3",
+            // Add more mappings here
+        };
+
+        return gameStreamMap[game] || null;
+    }
+});
     </script>
 </body>
 </html>
