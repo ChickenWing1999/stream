@@ -117,7 +117,8 @@ select:hover, button:hover {
     </div>
     
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
+
+document.addEventListener("DOMContentLoaded", () => {
     const watchButton = document.getElementById("watchButton");
     const streamContainer = document.getElementById("streamContainer");
 
@@ -128,6 +129,7 @@ select:hover, button:hover {
         if (liveStreamId) {
             streamContainer.style.display = "block"; // Show the live streaming container
             streamContainer.innerHTML = `<iframe src="https://streamingnow.pro/tvon.php?hd=${liveStreamId}" width="100%" height="500px" marginheight="0" marginwidth="0" scrolling="no" frameborder="0" allowfullscreen  allow="encrypted-media"></iframe>`;
+            scrollTo(streamContainer); // Scroll to the live streaming container
         } else {
             streamContainer.style.display = "none"; // Hide the live streaming container if no valid stream ID
             streamContainer.innerHTML = "";
@@ -136,6 +138,7 @@ select:hover, button:hover {
     });
 
     function getLiveStreamId(game) {
+        // Your existing logic to fetch the live stream ID
         // Replace this with your actual logic to fetch the live stream ID for the selected game
         // You might use an object or a database to store the mapping of game IDs to live stream IDs
         const gameStreamMap = {
@@ -147,7 +150,15 @@ select:hover, button:hover {
 
         return gameStreamMap[game] || null;
     }
+
+    function scrollTo(element) {
+        window.scrollTo({
+            behavior: "smooth",
+            top: element.offsetTop - 20
+        });
+    }
 });
+
     </script>
 </body>
 </html>
