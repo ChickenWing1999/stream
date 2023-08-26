@@ -38,6 +38,16 @@ document.addEventListener("DOMContentLoaded", () => {
         return gameStreamMap[game] || null;
     }
 
+    function checkLiveStreamAvailability(url, callback) {
+        // You need to implement the logic to check if the live stream is available
+        // This might involve making an AJAX request to the streaming server or API
+        // For demonstration purposes, let's assume it's available after a short delay
+        setTimeout(function() {
+            const isAvailable = Math.random() < 0.8; // 80% chance of availability
+            callback(isAvailable);
+        }, 2000); // Simulate a 2-second delay
+    }
+
     function scrollTo(element) {
         window.scrollTo({
             behavior: "smooth",
