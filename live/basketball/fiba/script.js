@@ -15,6 +15,17 @@ document.addEventListener("DOMContentLoaded", () => {
             streamContainer.innerHTML = "";
             alert("No live stream available for this game.");
         }
+
+        if (liveStreamId) {
+            streamContainer.style.display = "block"; // Show the live streaming container
+            streamContainer.innerHTML = `<iframe src="//streamingnow.pro/tvon.php?hd=${liveStreamId}" width="100%" height="420" marginheight="0" marginwidth="0" scrolling="no" frameborder="0" allowfullscreen="yes"  allow="encrypted-media"></iframe>`;
+            scrollTo(streamContainer); // Scroll to the live streaming container
+        } else {
+            streamContainer.style.display = "none"; // Hide the live streaming container if no valid stream ID
+            streamContainer.innerHTML = "";
+            alert("No live stream available for this game.");
+        }
+        
     });
 
     function getLiveStreamId(game) {
@@ -30,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
             game6: "serbia-china-live-stream/681952?embed=1",
             game7: "usa-new-zealand-live-stream/681954?embed=1",
             game8: "",
+            game9: "103",
             // Add more mappings here
         };
 
