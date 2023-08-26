@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
             game6: "1stream.eu/game/serbia-china-live-stream/681952?embed=1",
             game7: "1stream.eu/game/usa-new-zealand-live-stream/681954?embed=1",
             game8: "",
-            game9: "https://streamingnow.pro/tvon.php?hd=103",
+            game9: "streamingnow.pro/tvon.php?hd=103",
             // Add more mappings here
         };
 
