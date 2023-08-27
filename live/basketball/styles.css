@@ -24,11 +24,25 @@ body {
 .section-title {
     font-size: 1.5rem;
     margin-bottom: 1rem;
+    color: #fff;
 }
 
 .game-select, .watch-button {
     padding: 10px;
     font-size: 1rem;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.game-select:hover, .watch-button:hover {
+    background-color: #555;
+}
+
+.game-select {
+    margin-right: 10px;
 }
 
 .stream-container {
@@ -37,6 +51,14 @@ body {
     padding: 1rem;
     border-radius: 5px;
     display: none;
+    overflow: hidden;
+    position: relative;
+}
+
+.stream-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
 }
 
 .footer {
@@ -44,9 +66,20 @@ body {
     color: #fff;
     text-align: center;
     padding: 1rem 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
-.video-js {
-    width: 100%;
-    height: 100%;
+/* Responsive media queries */
+@media screen and (max-width: 768px) {
+    .container {
+        text-align: center;
+    }
+    
+    .game-select, .watch-button {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
 }
