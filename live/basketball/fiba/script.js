@@ -53,6 +53,6 @@ document.addEventListener("DOMContentLoaded", () => {
         window.scrollTo({
             behavior: "smooth",
             top: element.offsetTop - 20
-        }, 1000);
+        });
     }
 });
