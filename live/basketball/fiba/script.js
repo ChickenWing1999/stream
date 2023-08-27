@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
         if (liveStreamId) {
             streamContainer.style.display = "block"; // Show the live streaming container
-            streamContainer.innerHTML = `<iframe src="${liveStreamId}" width="100%" height="420" marginheight="0" marginwidth="0" scrolling="no" frameborder="0" allowfullscreen="yes"  allow="encrypted-media"></iframe>`;
+            streamContainer.innerHTML = `<iframe src="${liveStreamId}?embed=1" width="100%" height="420" marginheight="0" marginwidth="0" scrolling="no" frameborder="0" allowfullscreen="yes"  allow="encrypted-media"></iframe>`;
             scrollTo(streamContainer); // Scroll to the live streaming container
         } else {
             streamContainer.style.display = "none"; // Hide the live streaming container if no valid stream ID
@@ -34,14 +34,14 @@ document.addEventListener("DOMContentLoaded", () => {
         // Replace this with your actual logic to fetch the live stream ID for the selected game
         // You might use an object or a database to store the mapping of game IDs to live stream IDs
         const gameStreamMap = {
-            game1: "https://streamingnow.pro/tvon.php?hd=86",
-            game2: "https://streamingnow.pro/tvon.php?hd=88",
-            game3: "https://streamingnow.pro/tvon.php?hd=85",
-            game4: "https://streamingnow.pro/tvon.php?hd=87",
-            game5: "https://streamingnow.pro/tvon.php?hd=88",
-            game6: "https://streamingnow.pro/tvon.php?hd=86",
-            game7: "https://streamingnow.pro/tvon.php?hd=85",
-            game8: "https://streamingnow.pro/tvon.php?hd=87",
+            game1: "https://1stream.eu/game/italy-dominican-republic-live-stream/682729",
+            game2: "https://1stream.eu/game/germany-australia-live-stream/682733",
+            game3: "https://1stream.eu/game/egypt-montenegro-live-stream/682731",
+            game4: "https://1stream.eu/game/lebanon-canada-live-stream/682735",
+            game5: "https://1stream.eu/game/angola-philippines-live-stream/682730",
+            game6: "https://1stream.eu/game/japan-finland-live-stream/682734",
+            game7: "https://1stream.eu/game/lithuania-mexico-live-stream/682732",
+            game8: "https://1stream.eu/game/latvia-france-live-stream/682736",
             game9: "https://streamingnow.pro/tvon.php?hd=103",
             // Add more mappings here
         };
