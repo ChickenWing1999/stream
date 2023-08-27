@@ -21,7 +21,7 @@ $(document).ready(function() {
     function getLiveStreamUrl(game) {
         const streamUrls = {
             game1: "https://streamingnow.pro/tvon.php?hd=86",
-            game2: "https://streamdomain2.com/game2",
+            game2: "https://media.cm/e/h6ljmi9vxmih",
             // Add more mappings here
         };
 
