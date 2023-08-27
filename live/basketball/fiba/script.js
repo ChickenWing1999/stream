@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
     const watchButton = document.getElementById("watchButton");
     const streamContainer = document.getElementById("streamContainer");
+    const showDonateButton = $("#showDonateButton");
+    const donateOptions = $("#donateOptions");
 
     watchButton.addEventListener("click", () => {
         const selectedGame = document.getElementById("gameSelect").value;
