@@ -21,11 +21,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
      // Update button text and icon when toggling the donation options
-    showDonateButton.addEventListener("click", () => {
+    showDonateButton.on("click", function() {
         if (donateOptions.hasClass("show")) {
-            showDonateButton.html('Show Details');
+            showDonateButton.html('Show Donation Options');
         } else {
-            showDonateButton.html('Hide Details');
+            showDonateButton.html('Hide Donation Options');
         }
     });
 
