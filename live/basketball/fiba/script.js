@@ -20,9 +20,13 @@ document.addEventListener("DOMContentLoaded", () => {
         
     });
 
-     // Show-hide donation options when the button is clicked
+     // Update button text and icon when toggling the donation options
     showDonateButton.on("click", function() {
-        donateOptions.toggle();
+        if (donateOptions.hasClass("show")) {
+            showDonateButton.html('Show Details');
+        } else {
+            showDonateButton.html('Hide Details');
+        }
     });
 
     function getLiveStreamId(game) {
