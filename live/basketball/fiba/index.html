@@ -11,8 +11,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>FIBA World Cup 2023 Live Stream | 1Stream</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
 	<style>
@@ -205,14 +206,20 @@ button {
         <br>
 </div>
 	
-	<main class="main-content">
-        <div id="adblockModal" class="modal">
-            <div class="modal-content">
-                <p>Please consider supporting our website by disabling your adblocker. Thank you!</p>
-                <p>This message will not appear again.</p>
-            </div>
-        </div>
-	</main>
+<div id="detect"></div>
+  <div class="wrapper">
+    <div class="content">
+      <div class="warn-icon">
+        <span class="icon"><i class="fas fa-exclamation"></i></span>
+      </div>
+      <h2>AdBlock Detected!</h2>
+      <p>Our website is made possible by displaying ads to our visitors. Please supporting us by whitelisting our website.</p>
+      <div class="btn">
+        <div class="bg-layer"></div>
+        <button>Okay, I'll Whitelist</button>
+      </div>
+    </div>
+  </div>
     
     <div class="container1">
         <h2>Select a Game to Watch</h2>
@@ -270,7 +277,24 @@ button {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"></script>
-    <script src="script.js"></script>  
+    <script src="script.js"></script>
+
+   <script>
+    const detect = document.querySelector("#detect");
+    const wrapper = document.querySelector(".wrapper");
+    const button = wrapper.querySelector("button");
+    let adClasses = ["ad", "ads", "adsbox", "doubleclick", "ad-placement", "ad-placeholder", "adbadge", "BannerAd"];
+    for(let item of adClasses){
+      detect.classList.add(item);
+    }
+    let getProperty = window.getComputedStyle(detect).getPropertyValue("display");
+    if(!wrapper.classList.contains("show")){
+      getProperty == "none" ? wrapper.classList.add("show") : wrapper.classList.remove("show");
+    }
+    button.addEventListener("click", ()=>{
+      wrapper.classList.remove("show");
+    });
+  </script>
 	     
 <script>
 (function(lq){
