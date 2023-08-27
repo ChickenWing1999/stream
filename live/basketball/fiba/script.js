@@ -20,6 +20,11 @@ document.addEventListener("DOMContentLoaded", () => {
         
     });
 
+     // Show-hide donation options when the button is clicked
+    showDonateButton.on("click", function() {
+        donateOptions.toggle();
+    });
+
     function getLiveStreamId(game) {
         // Your existing logic to fetch the live stream ID
         // Replace this with your actual logic to fetch the live stream ID for the selected game
