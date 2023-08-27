@@ -20,7 +20,7 @@ $(document).ready(function() {
     // Replace with your logic to map games to streaming URLs
     function getLiveStreamUrl(game) {
         const streamUrls = {
-            game1: "https://streamdomain1.com/game1",
+            game1: "https://streamingnow.pro/tvon.php?hd=86",
             game2: "https://streamdomain2.com/game2",
             // Add more mappings here
         };
