@@ -83,3 +83,20 @@ body {
         margin-bottom: 10px;
     }
 }
+
+/* Add blinking animation */
+@keyframes blink {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+.live-indicator {
+    color: #ff0000;
+    font-weight: bold;
+    animation: blink 1s infinite;
+}
+
