@@ -53,6 +53,24 @@ document.addEventListener("DOMContentLoaded", () => {
         window.scrollTo({
             behavior: "smooth",
             top: element.offsetTop - 20
-        });
+        }, 1000);
+    }
+    
+    function startTimer() {
+        // Display the timer
+        timerElement.css("display", "block");
+
+        let seconds = 8; // Set the timer duration in seconds
+
+        const interval = setInterval(function() {
+            timerElement.text(`Redirecting in ${seconds} seconds...`);
+            seconds--;
+
+            if (seconds < 0) {
+                clearInterval(interval);
+                timerElement.css("display", "none");
+                // Add any redirect logic here if needed
+            }
+        }, 1000);
     }
 });
