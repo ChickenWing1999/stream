@@ -1,6 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
     const watchButton = document.getElementById("watchButton");
     const streamContainer = document.getElementById("streamContainer");
+    const adblockModal = $("#adblockModal");
+
+    // Check if the user has previously seen the modal
+    const modalSeen = localStorage.getItem("adblockModalSeen");
+    if (!modalSeen) {
+        // Show the modal
+        adblockModal.css("display", "block");
+
+        // Save a flag indicating the modal has been seen
+        localStorage.setItem("adblockModalSeen", true);
+    }
 
     watchButton.addEventListener("click", () => {
         const selectedGame = document.getElementById("gameSelect").value;
