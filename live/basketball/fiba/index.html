@@ -135,6 +135,21 @@ button {
             font-weight: 00;
             font-size: 12px;
         }
+
+	.blink {
+      animation: blink 2s steps(5, start) infinite;
+      -webkit-animation: blink 1s steps(5, start) infinite;
+    }
+    @keyframes blink {
+      to {
+        visibility: hidden;
+      }
+    }
+    @-webkit-keyframes blink {
+      to {
+        visibility: hidden;
+      }
+    }
 	    
     </style>
     <meta name="robots" content="noindex">
@@ -217,7 +232,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div style="color:white"><img src="https://eutvpn.com/assets/img/load.png" width="12px" height="12px"> <b>Load:</b> 0966-892-4455 (Globe)</div>
 </div>
 </div>
-<a id class="btn btn-success btn-block btn-sm show_hide_donate" data-toggle="collapse" href="#donate-tab" aria-expanded="false" aria-controls="donate-tab">Show Details</a>
+<a id class="btn btn-warning btn-block btn-sm show_hide_donate" data-toggle="collapse" href="#donate-tab" aria-expanded="false" aria-controls="donate-tab">Show Details</a>
 </div>
 </div>
 </div>
