@@ -151,6 +151,14 @@ button {
             font-weight: 00;
             font-size: 12px;
         }
+
+	    .timer {
+    display: none;
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    color: #ff0000;
+}
 	    
     </style>
     <meta name="robots" content="noindex">
@@ -221,11 +229,7 @@ button {
 		<option value="game2">Australia vs Germany</option>
 		<option value="game3">Montenegro vs Egypt</option>
 		<option value="game4">Lebanon vs Canada</option>
-		<option value="game5"><img height="40" width="40" class="w-[40px] h-[40px]"
-                         src="https://a.espncdn.com/i/teamlogos/countries/500/phi.png"
-                         alt="Philippines">Philippines vs <img height="40" width="40" class="w-[40px] h-[40px]"
-                         src="https://a.espncdn.com/i/teamlogos/countries/500/ang.png"
-                         alt="Angola">Angola</option>
+		<option value="game5"><Philippines vs Angola</option>
                 <option value="game6">Japan vs Finland</option>
                 <option value="game7">Lithuania vs Mexico</option>
 		<option value="game8">France vs Latvia</option>
@@ -233,10 +237,11 @@ button {
             </select>
             <button type="button" id="watchButton">Watch Live</button>
         </form>
-	<div id="videoAdContainer" class="video-ad-container">
+	<div id="timer" class="timer"></div>
         <div id="streamContainer" class="stream-container">
             <!-- The live streaming content will be displayed here -->
         </div>
+	</main>
 	    <div class="tab-content">
 		    <div id="noanim-tab-example-tabpane-livestreams" aria-labelledby="noanim-tab-example-tab-livestreams" class="fade tab-pane active show">
 			    <br/>
