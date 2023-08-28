@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
             game5: "https://streamingnow.pro/tvon.php?hd=85",
             game6: "https://streamingnow.pro/tvon.php?hd=86",
             game7: "https://1stream.eu/game/usa-greece-live-stream/682841?embed=1",
-            game8: "https://streamingnow.pro/tvon.php?hd=87",
+            game8: "https://www.youtube.com/embed/GxLL9PQbKDg",
             game9: "https://streamingnow.pro/tvon.php?hd=103",
             // Add more mappings here
         };
