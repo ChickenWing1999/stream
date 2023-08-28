@@ -182,7 +182,25 @@ button {
                     background-color: #1b1e21;
                     display: unset;
                 }
-            </style>
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+</style>
+	
 </head>
 <body>
     <nav style="background-color: #000" class="navbar navbar-expand-lg navbar-dark">
@@ -227,13 +245,14 @@ button {
 	<small class="font-italic support" style="font-size: 15px"><a style="text-decoration:none; color: black" href="https://himovies.sx/">Watch Latest Movies, TV Shows, and More here!</a></small>
 	</div>
 </form>
+	                                     
         <div id="streamContainer" class="stream-container">
             <!-- The live streaming content will be displayed here -->
         </div>
 <div class="tab-content">
 		    <div id="noanim-tab-example-tabpane-livestreams" aria-labelledby="noanim-tab-example-tab-livestreams" class="fade tab-pane active show">
 			    <div id="streams">
-				    <div class="d-flex" style="border: 1px solid #23262E; padding: 12px; width: 100%; margin-top: 28px; margin-bottom: 18px; border-radius: 5px; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1)">
+				    <div class="d-flex justify-content-center" style="border: 1px solid #23262E; padding: 12px; width: 100%; margin-top: 28px; margin-bottom: 18px; border-radius: 5px; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1)">
 <table>
   <tr>
     <th><b>EVENT</b></th>
