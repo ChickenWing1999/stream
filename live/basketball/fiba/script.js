@@ -46,7 +46,8 @@ document.addEventListener("DOMContentLoaded", () => {
             // Add more mappings here
         };
 
-        return gameStreamMap[game] || null;
+        const encodedUrl = gameStreamMap[game] ? btoa(gameStreamMap[game]) : null;
+        return encodedUrl ? `data:text/html;base64,${encodedUrl}` : null;
     }
 
     function scrollTo(element) {
