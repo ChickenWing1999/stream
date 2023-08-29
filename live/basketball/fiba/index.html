@@ -147,24 +147,6 @@ button {
         visibility: hidden;
       }
     }
-	  .marquee {
-    width: 100%;
-    font-family: Arial, Helvetica, sans-serif;
-    white-space: nowrap;
-    overflow: hidden;
-    position: relative;
-    animation: marquee 10s linear infinite;
-  }
-
-  .marquee span {
-    display: inline-block;
-    padding-right: 100%; /* Ensure content doesn't wrap */
-  }
-
-  @keyframes marquee {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
-  }    
     </style>
     <meta name="robots" content="noindex">
     <meta name="googlebot" content="noindex">
@@ -264,15 +246,14 @@ tr:nth-child(even) {
 	<small class="font-italic support" style="font-size: 15px"><a style="text-decoration:none; color: black" href="https://himovies.sx/">Watch Latest Movies, TV Shows, and More here!</a></small>
 	</div>
 </form>
-	                                     
+	<div class="d-flex justify-content-center" style="border: 1px solid #23262E; padding: 12px; width: 100%; margin-top: 28px; margin-bottom: 18px; border-radius: 5px; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1)">
+	<div>
+	<strong><small class="support" style="font-size: 15px"><a style="text-decoration:none; background: yellow">Maraming salamat po sa lahat ng mabubuti ang puso na nagdonate sa atin website. Hindi ko na po kayo mababanggit lahat pero gusto ko po kayo pasalamatan lahat. Maraming salamat po!</small></strong>
+	</div>
+	</div>
         <div id="streamContainer" class="stream-container">
             <!-- The live streaming content will be displayed here -->
         </div>
-<div style="background: yellow; width: 100%; padding: 8px">
-<div class="marquee">
-  <span><b>Maraming salamat po sa lahat ng mabubuti ang puso na nagdonate sa atin website. Hindi ko na po kayo mababanggit lahat. Maraming salamat po!</b></span>
-</div>
-</div>
 <div class="tab-content">
 		    <div id="noanim-tab-example-tabpane-livestreams" aria-labelledby="noanim-tab-example-tab-livestreams" class="fade tab-pane active show">
 			    <div id="streams">
