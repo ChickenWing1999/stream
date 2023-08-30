@@ -36,13 +36,16 @@ document.addEventListener("DOMContentLoaded", () => {
         const gameStreamMap = {
             game1: "https://streamingnow.pro/tvon.php?hd=86",
             game2: "https://streamingnow.pro/tvon.php?hd=85",
-            game3: "https://streamingnow.pro/tvon.php?hd=85",
+            game3: "https://streamingnow.pro/tvon.php?hd=88",
             game4: "https://streamingnow.pro/tvon.php?hd=85",
             game5: "https://streamingnow.pro/tvon.php?hd=85",
             game6: "https://streamingnow.pro/tvon.php?hd=85",
             game7: "https://streamingnow.pro/tvon.php?hd=85",
             game8: "https://streamingnow.pro/tvon.php?hd=85",
             game9: "https://streamingnow.pro/tvon.php?hd=103",
+            game10: "https://streamtape.com/e/698X0xQl4Yh9ada",
+            game11: "https://streamtape.com/e/OYDGQyp4ZBcZ390",
+            game12: "https://streamtape.com/e/K4mllJ3xkOiJ8L",
             // Add more mappings here
         };
 
