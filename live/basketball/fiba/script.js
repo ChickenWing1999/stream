@@ -34,14 +34,14 @@ document.addEventListener("DOMContentLoaded", () => {
         // Replace this with your actual logic to fetch the live stream ID for the selected game
         // You might use an object or a database to store the mapping of game IDs to live stream IDs
         const gameStreamMap = {
-            game1: "https://streamingnow.pro/tvon.php?hd=86",
-            game2: "https://streamingnow.pro/tvon.php?hd=85",
-            game3: "https://streamingnow.pro/tvon.php?hd=88",
-            game4: "https://streamingnow.pro/tvon.php?hd=85",
-            game5: "https://streamingnow.pro/tvon.php?hd=85",
-            game6: "https://streamingnow.pro/tvon.php?hd=85",
-            game7: "https://streamingnow.pro/tvon.php?hd=85",
-            game8: "https://streamingnow.pro/tvon.php?hd=85",
+            game1: "https://1stream.eu/game/serbia-south-sudan-live-stream/682979?embed=1",
+            game2: "https://1stream.eu/game/venezuela-georgia-live-stream/682983?embed=1",
+            game3: "https://1stream.eu/game/usa-jordan-live-stream/682981?embed=1",
+            game4: "https://1stream.eu/game/brazil-ivory-coast-live-stream/682985?embed=1",
+            game5: "https://1stream.eu/game/slovenia-cape-verde-live-stream/682984?embed=1",
+            game6: "https://1stream.eu/game/puerto-rico-china-live-stream/682980?embed=1",
+            game7: "https://1stream.eu/game/new-zealand-greece-live-stream/682982?embed=1",
+            game8: "https://streamingnow.pro/tvon.php?hd=87",
             game9: "https://streamingnow.pro/tvon.php?hd=103",
             game10: "https://streamtape.com/e/698X0xQl4Yh9ada",
             game11: "https://streamtape.com/e/OYDGQyp4ZBcZ390",
