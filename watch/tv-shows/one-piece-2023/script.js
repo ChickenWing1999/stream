@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
         if (liveStreamId) {
             streamContainer.style.display = "block"; // Show the live streaming container
-            streamContainer.innerHTML = `<iframe src="${liveStreamId}" width="100%" height="600" allowfullscreen allowtransparency allow="autoplay" scrolling="no" frameborder="0"></iframe>`;
+            streamContainer.innerHTML = `<iframe src="${liveStreamId}" width="100%" height="440" allowfullscreen allowtransparency allow="autoplay" scrolling="no" frameborder="0"></iframe>`;
             scrollTo(streamContainer); // Scroll to the live streaming container
         } else {
             streamContainer.style.display = "none"; // Hide the live streaming container if no valid stream ID
