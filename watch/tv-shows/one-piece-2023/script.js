@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
         if (liveStreamId) {
             streamContainer.style.display = "block"; // Show the live streaming container
-            streamContainer.innerHTML = `<iframe src="${liveStreamId}" width="100%" height="420" marginheight="0" marginwidth="0" scrolling="no" frameborder="0" allowfullscreen="yes"  allow="encrypted-media"></iframe>`;
+            streamContainer.innerHTML = `<iframe src="${liveStreamId}" width="100%" height="420" marginheight="0" marginwidth="0" scrolling="no" frameborder="0" allowfullscreen allowtransparency allow="autoplay" allow="encrypted-media"></iframe>`;
             scrollTo(streamContainer); // Scroll to the live streaming container
         } else {
             streamContainer.style.display = "none"; // Hide the live streaming container if no valid stream ID
@@ -38,10 +38,10 @@ document.addEventListener("DOMContentLoaded", () => {
             game2: "https://streamtape.com/e/Vmya04PbPDSKWap",
             game3: "https://streamtape.com/e/ol3zQ8oK42hJBjy",
             game4: "https://streamtape.com/e/KGbBvMqeV0iJ74",
-            game5: "https://1stream.eu/game/venezuela-japan-live-stream/688008?embed=1",
-            game6: "https://1stream.eu/game/south-sudan-philippines-live-stream/688006?embed=1",
-            game7: "https://1stream.eu/game/egypt-jordan-live-stream/687979?embed=1",
-            game8: "https://1stream.eu/game/iran-france-live-stream/687980?embed=1",
+            game5: "https://streamtape.com/e/69GVbJ2BqBTxWX",
+            game6: "https://streamtape.com/e/kDdB8P0bo0IrZK",
+            game7: "https://streamtape.com/e/K7g8w3aylRH0V7B",
+            game8: "https://streamtape.com/e/grQOe4egG0S9dq",
             // Add more mappings here
         };
 
