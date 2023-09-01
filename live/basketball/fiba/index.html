@@ -354,27 +354,14 @@ tr:nth-child(even) {
 	    
     </div>
 
-<script> 
-    window.intergramId = "-1001863713026";
-    window.intergramCustomizations = {
-        closedStyle: 'chat', // button or chat
-        closedChatAvatarUrl: 'https://www.intergram.xyz/media/demo_avatar.jpg',  // only used if closedStyle is set to 'chat'
-        cookieExpiration: 1, // in days. Once opened, closed chat title will be shown as button (when closedStyle is set to 'chat')
-        titleClosed: 'Talk to Us',
-        titleOpen: 'Welcome to 1Stream!',
-        introMessage: 'How may I help you today?',
-        autoResponse: 'A message that is sent immediately after the user sends its first message',
-        autoNoResponse: 'A message that is sent one minute after the user sends its first message ' +
-                        'and no response was received',
-        mainColor: "#0695FF", // Can be any css supported color 'red', 'rgb(255,87,34)', etc
-        alwaysUseFloatingButton: false // Use the mobile floating button also on large screens
-        displayMessageTime: true, // Show or hide time indicators in the chat window
-        displayBanner: true, // Show or hide banner on the bottom side of the chat window
-        desktopHeight: 500, // Height of the chat window on desktop
-        desktopWidth: 370, // Width of the chat window on desktop
-    };
+<script>var LHC_API = LHC_API||{};
+        LHC_API.args = {mode:'widget',lhc_base_url:'//test.livehelperchat.com/',wheight:450,wwidth:350,pheight:520,pwidth:500,leaveamessage:true,check_messages:true};
+        (function() {
+            var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+            var date = new Date();po.src = '//test.livehelperchat.com/design/defaulttheme/js/widgetv2/index.js?'+(""+date.getFullYear() + date.getMonth() + date.getDate());
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+        })();
 </script>
-<script id="intergram" type="text/javascript" src="https://www.intergram.xyz/js/widget.js"></script>
 	
 	<script type="text/javascript">
             var api_token = 'Bfu5xszX8JQ7FQOSb2JoQXkWQIFd8gH89rN93T3QC2w=';
