@@ -38,14 +38,11 @@ document.addEventListener("DOMContentLoaded", () => {
             game2: "https://1stream.eu/game/georgia-germany-live-stream/688014?embed=1",
             game3: "https://1stream.eu/game/montenegro-usa-live-stream/687989?embed=1",
             game4: "https://1stream.eu/game/latvia-spain-live-stream/687990?embed=1",
-            game5: "https://1stream.eu/game/venezuela-japan-live-stream/688008?embed=1",
-            game6: "https://1stream.eu/game/south-sudan-philippines-live-stream/688006?embed=1",
-            game7: "https://1stream.eu/game/egypt-jordan-live-stream/687979?embed=1",
-            game8: "https://1stream.eu/game/iran-france-live-stream/687980?embed=1",
+            game5: "https://streamingnow.pro/tvon.php?hd=204",
+            game6: "https://streamingnow.pro/tvon.php?hd=205",
+            game7: "https://streamingnow.pro/tvon.php?hd=206",
+            game8: "https://streamingnow.pro/tvon.php?hd=207",
             game9: "https://streamingnow.pro/tvon.php?hd=103",
-            game10: "https://streamtape.com/e/698X0xQl4Yh9ada",
-            game11: "https://streamtape.com/e/OYDGQyp4ZBcZ390",
-            game12: "https://streamtape.com/e/K4mllJ3xkOiJ8L",
             // Add more mappings here
         };
 
