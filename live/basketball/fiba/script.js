@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
             game5: "https://streamingnow.pro/tvon.php?hd=204",
             game6: "https://streamingnow.pro/tvon.php?hd=205",
             game7: "https://streamingnow.pro/tvon.php?hd=206",
-            game8: "https://streamingnow.pro/tvon.php?hd=207",
+            game8: "https://streamingnow.pro/tvon.php?hd=208",
             game9: "https://streamingnow.pro/tvon.php?hd=103",
             // Add more mappings here
         };
