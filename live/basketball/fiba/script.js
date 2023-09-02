@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const toggleButton = $("#toggleWidget");
 
     // Toggle the widget when the button is clicked
-    toggleButton.on("click", function() {
+    toggleWidget.on("click", function() {
         // Create the request form container dynamically
         const requestFormContainer = $("<div>")
             .addClass("request-form-widget")
