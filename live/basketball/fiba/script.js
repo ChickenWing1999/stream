@@ -34,14 +34,14 @@ document.addEventListener("DOMContentLoaded", () => {
         // Replace this with your actual logic to fetch the live stream ID for the selected game
         // You might use an object or a database to store the mapping of game IDs to live stream IDs
         const gameStreamMap = {
-            game1: "https://1stream.eu/game/serbia-italy-live-stream/688013?embed=1",
-            game2: "https://1stream.eu/game/georgia-germany-live-stream/688014?embed=1",
-            game3: "https://1stream.eu/game/montenegro-usa-live-stream/687989?embed=1",
-            game4: "https://1stream.eu/game/latvia-spain-live-stream/687990?embed=1",
-            game5: "https://streamingnow.pro/tvon.php?hd=204",
-            game6: "https://streamingnow.pro/tvon.php?hd=205",
-            game7: "https://streamingnow.pro/tvon.php?hd=206",
-            game8: "https://streamingnow.pro/tvon.php?hd=208",
+            game1: "https://1stream.eu/game/finland-venezuela-live-stream/688028?embed=1",
+            game2: "https://1stream.eu/game/south-sudan-angola-live-stream/688026?embed=1",
+            game3: "https://1stream.eu/game/egypt-new-zealand-live-stream/688052?embed=1",
+            game4: "https://1stream.eu/game/ivory-coast-france-live-stream/688030?embed=1",
+            game5: "https://1stream.eu/game/cape-verde-japan-live-stream/688029?embed=1",
+            game6: "https://1stream.eu/game/philippines-china-live-stream/688027?embed=1",
+            game7: "https://1stream.eu/game/jordan-mexico-live-stream/687997?embed=1",
+            game8: "https://1stream.eu/game/iran-lebanon-live-stream/687998?embed=1",
             game9: "https://streamingnow.pro/tvon.php?hd=103",
             // Add more mappings here
         };
