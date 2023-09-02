@@ -3,45 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const streamContainer = document.getElementById("streamContainer");
     const showDonateButton = $("#showDonateButton");
     const donateOptions = $("#donateOptions");
-    const toggleButton = $("#toggleWidget");
-
-    // Toggle the widget when the button is clicked
-    toggleWidget.on("click", function() {
-        // Create the request form container dynamically
-        const requestFormContainer = $("<div>")
-            .addClass("request-form-widget")
-            .append(`
-                <h2 class="section-title">Request Support</h2>
-                <form action="#" method="post" id="supportForm">
-                    <div class="form-group">
-                        <label for="name">Your Name</label>
-                        <input type="text" class="form-control" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Your Email</label>
-                        <input type="email" class="form-control" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Your Message</label>
-                        <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-            `);
-
-        // Append the form container to the body
-        $("body").append(requestFormContainer);
-
-        // Add a close button to hide the form
-        requestFormContainer.append('<button id="closeWidget" class="widget-button">Close</button>');
-
-        // Toggle the expanded class to show/hide the form
-        requestFormContainer.toggleClass("expanded");
-
-        // Close the form when the close button is clicked
-        $("#closeWidget").on("click", function() {
-            requestFormContainer.remove();
-        });
 
     watchButton.addEventListener("click", () => {
         const selectedGame = document.getElementById("gameSelect").value;
