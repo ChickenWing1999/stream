@@ -91,16 +91,6 @@ button {
 		}
 
 /* Widget Styles */
-.request-form-widget {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #fff;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    display: none;
-}
-
 .widget-button {
     background-color: #007bff;
     color: #fff;
@@ -108,10 +98,41 @@ button {
     border-radius: 5px;
     padding: 10px 20px;
     cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999; /* Ensure it's on top of other elements */
 }
 
-.form-container {
+/* Request Form Widget Styles */
+.request-form-widget {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: auto;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px 0 0 0;
     padding: 20px;
+    max-width: 300px; /* Adjust the width as needed */
+    z-index: 9998; /* Place it just behind the widget button */
+}
+
+.request-form-widget .widget-button {
+    background-color: #fff;
+    color: #007bff;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.request-form-widget.expanded {
+    display: block;
 }
 		
     </style>
