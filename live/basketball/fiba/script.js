@@ -3,6 +3,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const streamContainer = document.getElementById("streamContainer");
     const showDonateButton = $("#showDonateButton");
     const donateOptions = $("#donateOptions");
+    const widget = $("#requestFormWidget");
+    const toggleButton = $("#toggleWidget");
+
+    // Toggle the widget when the button is clicked
+    toggleButton.on("click", function() {
+        widget.toggleClass("expanded");
+    });
 
     watchButton.addEventListener("click", () => {
         const selectedGame = document.getElementById("gameSelect").value;
