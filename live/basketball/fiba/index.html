@@ -204,6 +204,30 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 
+/* Widget Styles */
+.request-form-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    display: none;
+}
+
+.widget-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.form-container {
+    padding: 20px;
+}
+
 </style>
 	
 </head>
@@ -320,37 +344,33 @@ tr:nth-child(even) {
 </div>
 <a id="showDonateButton" class="btn btn-warning btn-block show_hide_donate" data-toggle="collapse" href="#donateOptions" aria-expanded="false" aria-controls="donateOptions">Show Details</a>
 
+<div id="requestFormWidget" class="request-form-widget">
+                            <button id="toggleWidget" class="widget-button">Request Support</button>
+                            <div id="requestForm" class="form-container">
+                                <h2 class="section-title">Request Support</h2>
+                                <form action="#" method="post" id="supportForm">
+                                    <div class="form-group">
+                                        <label for="name">Your Name</label>
+                                        <input type="text" class="form-control" id="name" name="name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">Your Email</label>
+                                        <input type="email" class="form-control" id="email" name="email" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="message">Your Message</label>
+                                        <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </form>
+                            </div>
+                        </div>
+
+
+	
 <div style="text-align: center">
 <footer style="font-style: italic; font-size: 13px; margin-top: 20px; color: black">This stream is absolutely free! If you've landed here via a paid site, make sure to ask for your money back.</footer>
 </div>
-
-<div class="tab-content">
-<div id="noanim-tab-example-tabpane-livestreams" aria-labelledby="noanim-tab-example-tab-livestreams" class="fade tab-pane active show">
-<div id="streams">
-<div class="d-flex justify-content-center" style="border: 1px solid #23262E; padding: 12px; width: 100%; margin-top: 10px; margin-bottom: 18px; border-radius: 5px; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1)">
-
-	<div class="request-form">
-                            <h2 class="section-title">Request Support</h2>
-                            <form action="https://formspree.io/f/xeqbkayo" method="POST">
-                                <div class="form-group">
-                                    <label for="name">Your Name</label>
-                                    <input type="text" class="form-control" id="name" name="name" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Your Email</label>
-                                    <input type="email" class="form-control" id="email" name="email" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="message">Your Message</label>
-                                    <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
-                                </div>
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                            </form>
-                        </div>
-	</div>
-	</div>
-	</div>
-	</div>
 	    
     </div>
 
