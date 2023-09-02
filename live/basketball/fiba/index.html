@@ -323,6 +323,25 @@ tr:nth-child(even) {
 <div style="text-align: center">
 <footer style="font-style: italic; font-size: 13px; margin-top: 20px; color: black">This stream is absolutely free! If you've landed here via a paid site, make sure to ask for your money back.</footer>
 </div>
+
+	<div class="request-form">
+                            <h2 class="section-title">Request Support</h2>
+                            <form id="supportForm" action="submit_support.php" method="post">
+                                <div class="form-group">
+                                    <label for="name">Your Name</label>
+                                    <input type="text" class="form-control" id="name" name="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Your Email</label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">Your Message</label>
+                                    <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
 	    
     </div>
 
