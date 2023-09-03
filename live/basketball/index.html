@@ -1,14 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<title>Redirection Webpage</title>
+<title>Redirect with Timer</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="script.js"></script>
+<script src="redirect.js"></script>
 </head>
 <body>
-<h1>Redirection Webpage</h1>
-<p>This page will redirect you to another tab after 5 seconds.</p>
-<button onclick="redirectToAnotherTab('https://www.example.com', 5)">Redirect</button>
-<div id="countdownTimer"></div>
+<a href="#" onclick="redirect('https://www.example.com', 5)">Click here to redirect to another page with a timer</a>
 </body>
 </html>
