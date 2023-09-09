@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streaming Website</title>
+</head>
+<body>
+    <h1>Stream Movies and Episodes</h1>
+
+    <!-- File input for selecting videos -->
+    <input type="file" id="fileInput">
+
+    <!-- Video player element -->
+    <video id="videoPlayer" controls></video>
+
+    <script>
+        // Your Google Drive API client ID and API key
+        const CLIENT_ID = 'YOUR_CLIENT_ID';
+        const API_KEY = 'YOUR_API_KEY';
+
+        // Initialize the Google Drive API client
+        gapi.load('client:auth2', () => {
+            gapi.client.init({
+                apiKey: API_KEY,
+                clientId: CLIENT_ID,
+                discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/drive/v3/rest'],
+                scope: 'https://www.googleapis.com/auth/drive.readonly',
+            }).then(() => {
+                // Authenticate the user
+                return gapi.auth2.getAuthInstance().signIn();
+            }).then(() => {
+                console.log('Authenticated');
+            }).catch(error => {
+                console.error('Error authenticating:', error);
+            });
+        });
+
+        // Function to check if the selected file exists in Google Drive
+        function checkFileInDrive(file) {
+            gapi.client.drive.files.list({
+                q: `name='${file.name}'`,
+            }).then(response => {
+                if (response.result.files.length > 0) {
+                    // If the file exists in Google Drive, display it in the video player
+                    const videoPlayer = document.getElementById('videoPlayer');
+                    videoPlayer.src = `https://drive.google.com/uc?id=${response.result.files[0].id}`;
+                } else {
+                    alert('File not found in Google Drive.');
+                }
+            }).catch(error => {
+                console.error('Error checking file in Google Drive:', error);
+            });
+        }
+
+        // Event listener for file input change
+        const fileInput = document.getElementById('fileInput');
+        fileInput.addEventListener('change', () => {
+            const file = fileInput.files[0];
+            if (file) {
+                checkFileInDrive(file);
+            }
+        });
+    </script>
+    <script src="https://apis.google.com/js/api.js"></script>
+</body>
+</html>
