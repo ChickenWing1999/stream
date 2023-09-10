@@ -1,5 +1,5 @@
 const movies = [
-    { title: 'Movie 1', poster: 'movie1.jpg' },
+    { title: 'The Nun (2023)', poster: 'https://www.themoviedb.org/t/p/original/cn6kjfbE8jhiBuhanIc2pwuzhG5.jpg' },
     { title: 'Movie 2', poster: 'movie2.jpg' },
     { title: 'Movie 3', poster: 'movie3.jpg' },
     // Add more movie data here
