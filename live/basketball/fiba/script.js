@@ -36,11 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const gameStreamMap = {
             game1: "https://1stream.eu/game/canada-usa-live-stream/689846?embed=1",
             game2: "https://1stream.eu/game/germany-serbia-live-stream/689847?embed=1",
-            game9: "https://streamingnow.pro/tvon.php?hd=103",
-            game10: "https://streamingnow.pro/tvon.php?hd=187",
-            game11: "https://streamingnow.pro/tvon.php?hd=302",
-            game12: "https://streamingnow.pro/tvon.php?hd=189",
-            game13: "https://streamingnow.pro/tvon.php?hd=190",
+            game3: "https://weakstream.org/nba-stream/germany-vs-serbia/130265/?embed=true",
             // Add more mappings here
         };
 
