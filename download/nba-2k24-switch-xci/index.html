@@ -70,21 +70,33 @@
             margin-top: 20px;
         }
 
-        .download-links {
+        /* Style the download table */
+        .download-table {
+            width: 100%;
+            border-collapse: collapse;
             margin-top: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        }
+
+        .download-table th, .download-table td {
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .download-table th {
+            background-color: #333;
+            color: #fff;
         }
 
         .download-link {
-            margin: 10px;
             text-decoration: none;
             background-color: #007bff;
             color: #fff;
             padding: 10px 20px;
             border-radius: 5px;
             transition: background-color 0.3s;
+            display: inline-block;
+            text-align: center;
+            width: 100%;
         }
 
         .download-link:hover {
@@ -99,57 +111,33 @@
         </header>
         <div class="content">
             <p>Click the button below to download our awesome software.</p>
-            <a class="download-button" href="#" id="download-button">Download Now</a>
+            <a class="download-button" href="#">Download Now</a>
             <div class="image-container">
                 <img src="your-image-url.jpg" alt="Product Image">
             </div>
-            <div class="download-links">
-                <a class="download-link" href="#" id="download-link-1" onclick="downloadFile(1)">Download Part 1</a>
-                <a class="download-link" href="#" id="download-link-2" onclick="downloadFile(2)">Download Part 2</a>
-                <a class="download-link" href="#" id="download-link-3" onclick="downloadFile(3)">Download Part 3</a>
-            </div>
+            <table class="download-table">
+                <thead>
+                    <tr>
+                        <th>File Part</th>
+                        <th>Download Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Part 1</td>
+                        <td><a class="download-link" href="#">Download</a></td>
+                    </tr>
+                    <tr>
+                        <td>Part 2</td>
+                        <td><a class="download-link" href="#">Download</a></td>
+                    </tr>
+                    <tr>
+                        <td>Part 3</td>
+                        <td><a class="download-link" href="#">Download</a></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
-
-    <script>
-        // JavaScript to handle the download link behavior
-        var downloadLinks = document.querySelectorAll(".download-link");
-
-        function hideDownloadLinks() {
-            for (var i = 0; i < downloadLinks.length; i++) {
-                downloadLinks[i].style.display = "none";
-            }
-        }
-
-        function showDownloadLink(linkId) {
-            hideDownloadLinks();
-            var selectedLink = document.getElementById("download-link-" + linkId);
-            selectedLink.style.display = "block";
-        }
-
-        function downloadFile(part) {
-            // Replace with actual download URLs
-            var downloadUrls = {
-                1: "https://example.com/download-part-1.zip",
-                2: "https://example.com/download-part-2.zip",
-                3: "https://example.com/download-part-3.zip"
-            };
-
-            var downloadUrl = downloadUrls[part];
-            var anchor = document.createElement("a");
-            anchor.href = downloadUrl;
-            anchor.download = "download-part-" + part + ".zip"; // Set the desired filename
-            anchor.style.display = "none";
-
-            document.body.appendChild(anchor);
-            anchor.click();
-            document.body.removeChild(anchor);
-        }
-
-        hideDownloadLinks(); // Initially hide all download links
-        document.getElementById("download-button").addEventListener("click", function () {
-            showDownloadLink(1); // Show the first download link when the button is clicked
-        });
-    </script>
 </body>
 </html>
