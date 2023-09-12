@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
             game2: "https://1stream.eu/game/germany-serbia-live-stream/689847?embed=1",
             game3: "https://weakstream.org/nba-stream/germany-vs-serbia/130265/?embed=true",
             game4: "https://wevgames.com/live/07.php",
-            game5: "https://watchkobestreams.info/fiba-2.php",
+            game5: "https://qiwi.gg/file/5ZSS4923-LanesPhotoshopMasterPack",
             // Add more mappings here
         };
 
