@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Replace this with your actual logic to fetch the live stream ID for the selected game
         // You might use an object or a database to store the mapping of game IDs to live stream IDs
         const gameStreamMap = {
-            game9: "https://streamingnow.pro/tvon.php?hd=188",
+            game9: "https://freeviplive.com/tvon.php?hd=188",
             // Add more mappings here
         };
 
