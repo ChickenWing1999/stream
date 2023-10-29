@@ -6,6 +6,8 @@
 <body>
   <video id="player"></video>
 
+  <ul id="channel-list"></ul>
+
   <script>
     // Create a video element
     const player = document.querySelector('#player');
@@ -18,6 +20,19 @@
       if (xhr.status === 200) {
         // Parse the M3U playlist
         const playlist = xhr.responseText.split('#EXTINF:')[1].split('\n');
+
+        // Populate the channel list
+        const channelList = document.querySelector('#channel-list');
+        playlist.forEach((channel, index) => {
+          const channelItem = document.createElement('li');
+          channelItem.textContent = channel.split(',')[0];
+          channelItem.addEventListener('click', function() {
+            // Play the selected channel
+            player.src = playlist[index];
+            player.play();
+          });
+          channelList.appendChild(channelItem);
+        });
 
         // Play the first channel in the playlist
         player.src = playlist[0];
