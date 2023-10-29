@@ -4,19 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IPTV Player</title>
-    <link href="https://vjs.zencdn.net/7.17.0/video-js.css" rel="stylesheet">
+    <!-- Include Shaka Player library -->
+    <script src="https://cdn.shaka-player-demo.appspot.com/v2.5.3/shaka-player.compiled.js"></script>
 </head>
 <body>
     <div>
-        <video id="iptv-player" class="video-js vjs-default-skin" controls width="640" height="360">
-            <source src="https://iptv-org.github.io/iptv/index.nsfw.m3u" type="application/x-mpegURL">
-        </video>
+        <video id="iptv-player" controls width="640" height="360"></video>
     </div>
-    
-    <script src="https://vjs.zencdn.net/7.17.0/video.js"></script>
+
     <script>
-        var player = videojs('iptv-player');
-        player.play(); // Auto-start the video
+        const videoElement = document.getElementById('iptv-player');
+        const manifestUri = 'https://iptv-org.github.io/iptv/index.nsfw.m3u'; // Replace with your IPTV stream URL
+
+        if (shaka.Player.isBrowserSupported()) {
+            // Create a Shaka Player instance
+            const player = new shaka.Player(videoElement);
+
+            // Listen for the 'load' event to load the stream
+            player.addEventListener('load', () => {
+                player.load(manifestUri).then(() => {
+                    // Video loaded successfully
+                }).catch(error => {
+                    console.error('Error loading the stream', error);
+                });
+            });
+        } else {
+            console.error('Shaka Player is not supported in this browser.');
+        }
     </script>
 </body>
 </html>
