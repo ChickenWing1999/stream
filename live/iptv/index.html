@@ -1,35 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>IPTV Channel Website</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPTV Player</title>
+    <link href="https://vjs.zencdn.net/7.17.0/video-js.css" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>IPTV Channels</h1>
-    </header>
-    <main>
-        <section class="channel-list">
-            <h2>Channel Categories</h2>
-            <ul id="category-list">
-                <!-- JavaScript will populate this list -->
-            </ul>
-        </section>
-        <section class="channel-list">
-            <h2>Channels</h2>
-            <ul id="channel-list">
-                <!-- JavaScript will populate this list -->
-            </ul>
-        </section>
-        <section class="player">
-            <h2>Channel Player</h2>
-            <video id="channel-player" controls></video>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2023 Your IPTV Channel</p>
-    </footer>
-    <script src="script.js"></script>
+    <div>
+        <video id="iptv-player" class="video-js vjs-default-skin" controls width="640" height="360">
+            <source src="https://raw.githubusercontent.com/Free-TV/IPTV/master/playlist.m3u8" type="application/x-mpegURL">
+        </video>
+    </div>
+    
+    <script src="https://vjs.zencdn.net/7.17.0/video.js"></script>
+    <script>
+        var player = videojs('iptv-player');
+        player.play(); // Auto-start the video
+    </script>
 </body>
 </html>
