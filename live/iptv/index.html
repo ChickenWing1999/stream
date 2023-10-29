@@ -1,29 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>IPTV Player</title>
-    <link href="https://vjs.zencdn.net/7.15.4/video-js.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <title>IPTV Player</title>
 </head>
 <body>
-    <div class="iptv-container">
-        <div class="iptv-header">
-            <h1>IPTV Player</h1>
-        </div>
-        <div class="iptv-player">
-            <video id="iptv-player" class="video-js vjs-default-skin" controls preload="auto"></video>
-        </div>
-        <div class="iptv-channel-list">
-            <select id="channel-list">
-                <option value="">Select a channel</option>
-                <!-- Add channel options here -->
-            </select>
-            <div class="channel-thumbnail">
-                <img id="channel-thumbnail-img" src="" alt="Channel Thumbnail">
-            </div>
-        </div>
-    </div>
-    <script src="https://vjs.zencdn.net/7.15.4/video.js"></script>
-    <script src="iptv-player.js"></script>
+  <video id="player"></video>
+
+  <script>
+    // Create a video element
+    const player = document.querySelector('#player');
+
+    // Load the M3U playlist
+    const playlistUrl = 'https://iptv-org.github.io/iptv/index.m3u';
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', playlistUrl);
+    xhr.onload = function() {
+      if (xhr.status === 200) {
+        // Parse the M3U playlist
+        const playlist = xhr.responseText.split('#EXTINF:')[1].split('\n');
+
+        // Play the first channel in the playlist
+        player.src = playlist[0];
+        player.play();
+      } else {
+        console.log('Error loading playlist: ' + xhr.statusText);
+      }
+    };
+    xhr.send();
+
+    // Handle channel changes
+    player.addEventListener('ended', function() {
+      // Play the next channel in the playlist
+      player.src = playlist[player.selectedIndex + 1];
+      player.play();
+    });
+  </script>
 </body>
 </html>
