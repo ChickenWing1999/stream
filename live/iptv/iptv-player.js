@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const channelList = document.getElementById("channel-list");
 
     // Define your M3U playlist
-    const iptvPlaylistURL = "https://iptv-org.github.io/iptv/languages/tgl.m3u";
+    const iptvPlaylistURL = "iptv-org.github.io/iptv/index.m3u";
 
     // Fetch and parse the M3U playlist
     fetch(iptvPlaylistURL)
