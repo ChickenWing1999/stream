@@ -36,7 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const gameStreamMap = {
             game1: "https://1stream.eu/nba/new-york-knicks-indiana-pacers-live-stream/789862?embed=1",
             game2: "https://topstreams.info/nba/pacers",
-            game3: "https://topstreams.info/nba/knicks",
             // Add more mappings here
         };
 
