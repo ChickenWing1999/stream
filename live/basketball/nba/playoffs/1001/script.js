@@ -35,8 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // You might use an object or a database to store the mapping of game IDs to live stream IDs
         const gameStreamMap = {
             game1: "https://1stream.eu/nba/minnesota-timberwolves-denver-nuggets-live-stream/789863?embed=1",
-            game2: "https://topstreams.info/nba/nuggets",
-            game3: "https://topstreams.info/nba/timberwolves",
+            game2: "https://topstreams.info/nba/timberwolves",
             // Add more mappings here
         };
 
