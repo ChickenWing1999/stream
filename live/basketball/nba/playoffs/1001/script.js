@@ -36,6 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const gameStreamMap = {
             game1: "https://1stream.eu/nba/minnesota-timberwolves-denver-nuggets-live-stream/789863?embed=1",
             game2: "https://topstreams.info/nba/timberwolves",
+            game3: "https://weakspell.to/nba-streams/minnesota-timberwolves-vs-denver-nuggets-2/162333/?embed=true",
             // Add more mappings here
         };
 
