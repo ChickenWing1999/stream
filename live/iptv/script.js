@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const donateOptions = $("#donateOptions");
 
     watchButton.addEventListener("click", () => {
-        const selectedGame = document.getElementById("gameSelect").value;
         const liveStreamId = getLiveStreamId(selectedGame);
     
         if (liveStreamId) {
