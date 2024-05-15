@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const donateOptions = $("#donateOptions");
 
     watchButton.addEventListener("click", () => {
-        const liveStreamId = getLiveStreamId(selectedGame);
     
         if (liveStreamId) {
             streamContainer.style.display = "block"; // Show the live streaming container
