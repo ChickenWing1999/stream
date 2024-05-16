@@ -34,9 +34,9 @@ document.addEventListener("DOMContentLoaded", () => {
         // Replace this with your actual logic to fetch the live stream ID for the selected game
         // You might use an object or a database to store the mapping of game IDs to live stream IDs
         const gameStreamMap = {
-            game1: "https://1stream.eu/nba/cleveland-cavaliers-boston-celtics-live-stream/791311?embed=1",
-            game2: "https://topstreams.info/nba/cavaliers",
-            game3: "https://weakspell.to/nba-streams/cleveland-cavaliers-vs-boston-celtics-2/162334/?embed=true",
+            game1: "",
+            game2: "",
+            game3: "",
             // Add more mappings here
         };
 
