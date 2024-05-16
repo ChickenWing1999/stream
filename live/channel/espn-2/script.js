@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
 if(Hls.isSupported()) {
     var video = document.getElementById('video');
     var hls = new Hls();
-    hls.loadSource('http://cdncities.com/deranalive/deranalive/playlist.m3u8');
+    hls.loadSource('https://cdn1.skygo.mn/live/disk1/Cartoon_Network/HLS-FTA/Cartoon_Network.m3u8');
     hls.attachMedia(video);
     hls.on(Hls.Events.MANIFEST_PARSED,function() {
       video.play();
