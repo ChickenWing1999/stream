@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
         if (liveStreamId) {
             streamContainer.style.display = "block"; // Show the live streaming container
-            streamContainer.innerHTML = `<iframe src="${liveStreamId}" width="100%" height="420" marginheight="0" marginwidth="0" scrolling="no" frameborder="0" allowfullscreen="yes"  allow="encrypted-media"></iframe>`;
+            streamContainer.innerHTML = `<iframe class="video responsive" marginheight="0" marginwidth="0" src="${liveStreamId}" name="iframe_a" scrolling="no" allowfullscreen="yes" width="100%" height="100%" frameborder="0">Your Browser Do not Support Iframe</iframe>`;
             scrollTo(streamContainer); // Scroll to the live streaming container
         } else {
             streamContainer.style.display = "none"; // Hide the live streaming container if no valid stream ID
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Replace this with your actual logic to fetch the live stream ID for the selected game
         // You might use an object or a database to store the mapping of game IDs to live stream IDs
         const gameStreamMap = {
-            game9: "https://sons-stream.com/tvon.php?hd=103",
+            game9: "https://dlhd.sx/embed/stream-404.php",
             // Add more mappings here
         };
 
