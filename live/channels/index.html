@@ -219,29 +219,27 @@ tr:nth-child(even) {
 </style>
 
 <style> 
-    .tableFixHead { 
-      width: 500px; 
-      table-layout: fixed; 
-      border-collapse: collapse; 
+    .fixTableHead { 
+      overflow-y: auto; 
+      height: 110px; 
     } 
-      .tableFixHead tbody { 
-      display: block; 
+    .fixTableHead thead th { 
+      position: sticky; 
+      top: 0; 
+    } 
+    table { 
+      border-collapse: collapse;         
       width: 100%; 
-      overflow: auto; 
-      height: 50px; 
     } 
-    .tableFixHead thead tr { 
-      display: block; 
-    } 
-    .tableFixHead th, 
-    .tableFixHead  td { 
-      padding: 5px 10px; 
-      width: 200px; 
+    th, 
+    td { 
+      padding: 8px 15px; 
+      border: 2px solid #529432; 
     } 
     th { 
       background: #ABDD93; 
     } 
-  </style>
+  </style> 
 	
 </head>
 <body>
