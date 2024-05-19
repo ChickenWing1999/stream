@@ -27,7 +27,7 @@
 }
 
 .card {
-  width: 200px;
+  width: 250px;
   background-color: #fff;
   padding: 20px;
   margin: 20px;
@@ -69,6 +69,20 @@
   transform: translateY(-5px);
   transition: 0.3s;
 }
+
+/* For devices with screen width greater than 768px */
+        @media (min-width: 768px) {
+            .card {
+                width: calc(50% - 40px);
+            }
+        }
+
+        /* For devices with screen width greater than 1200px */
+        @media (min-width: 1200px) {
+            .card {
+                width: calc(15% - 40px);
+            }
+        }
     </style>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     
@@ -82,7 +96,7 @@
   <div class="card-content">
     <h2>NBA TV</h2>
     <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d2/NBA_TV.svg/1200px-NBA_TV.svg.png" class="img-fluid rounded mx-auto d-block" alt="Mavericks vs Thunder">
-    <button href="https://1stream.pages.dev/live/basketball/nba/playoffs/1003/" class="btn btn-success btn-sm" role="button" aria-disabled="true" target="_blank">Watch</button>
+    <a href="https://1stream.pages.dev/live/basketball/nba/playoffs/1003/" class="btn btn-success btn-sm" role="button" aria-disabled="true" target="_blank">Watch</a>
   </div>
 </div>
   
