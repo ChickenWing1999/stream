@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // You might use an object or a database to store the mapping of game IDs to live stream IDs
         const gameStreamMap = {
             // ANC HD
-            game1: "https://player.livepush.io/emv2J4WFcMwbC",
+            game1: "https://player.livepush.io/emvptOp3hIomK",
             // Animal Planet
             game2: "https://dlhd.sx/embed/stream-304.php",
             game3: "https://d.daddylivehd.sx/embed/stream-304.php",
@@ -123,19 +123,28 @@ document.addEventListener("DOMContentLoaded", () => {
             // Showtime
             game56: "https://dlhd.sx/embed/stream-333.php",
             game57: "https://d.daddylivehd.sx/embed/stream-333.php",
-            game58: "",
-            game59: "",
-            game60: "",
-            game61: "",
-            game62: "",
-            game63: "",
-            game64: "",
-            game65: "",
-            game66: "",
-            game67: "",
-            game68: "",
-            game69: "",
-            game70: "",
+            // TeleRadyo Serbisyo
+            game58: "https://player.livepush.io/emv9acxkYGlTN",
+            // TLC
+            game59: "https://dlhd.sx/embed/stream-337.php",
+            game60: "https://d.daddylivehd.sx/embed/stream-337.php",
+            // TNT
+            game61: "https://dlhd.sx/embed/stream-338.php",
+            game62: "https://d.daddylivehd.sx/embed/stream-338.php",
+            // TruTV
+            game63: "https://dlhd.sx/embed/stream-341.php",
+            game64: "https://d.daddylivehd.sx/embed/stream-341.php",
+            // TV5 HD
+            game65: "https://player.livepush.io/emvjUNWUzuU2J",
+            // NBA TV
+            game66: "https://dlhd.sx/embed/stream-404.php",
+            game67: "https://d.daddylivehd.sx/embed/stream-404.php",
+            // Universal Kids
+            game68: "https://dlhd.sx/embed/stream-668.php",
+            game69: "https://d.daddylivehd.sx/embed/stream-668.php",
+            // WWE Network
+            game70: "https://dlhd.sx/embed/stream-376.php",
+            game71: "https://d.daddylivehd.sx/embed/stream-376.php",
             // Add more mappings here
         };
 
