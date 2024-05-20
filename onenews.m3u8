@@ -1,4 +1,2 @@
-#EXTM3U
-#EXTINF:0,3V39Bce
-#EXTVLCOPT:network-caching=1000
+#EXTINF:-1 tvg-id="ONE NEWS" tvg-chno="39" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/5/5a/One_News_PH_logo_2020.png/revision/latest/scale-to-width-down/250?cb=20200308023054" group-title="NEWS",One News
 https://bit.ly/3V39Bce
