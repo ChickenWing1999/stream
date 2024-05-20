@@ -145,6 +145,8 @@ document.addEventListener("DOMContentLoaded", () => {
             // WWE Network
             game70: "https://dlhd.sx/embed/stream-376.php",
             game71: "https://d.daddylivehd.sx/embed/stream-376.php",
+            // Cine Mo!
+            game72: "https://player.livepush.io/emvCWFugvFJnM",
             // Add more mappings here
         };
 
