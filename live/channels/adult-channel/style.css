@@ -1,8 +1,8 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    background-color: #f9f9f9;
 }
 
 header {
@@ -15,7 +15,9 @@ header {
 main {
     display: flex;
     justify-content: space-between;
-    padding: 1rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .video-container {
@@ -24,6 +26,9 @@ main {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 video {
@@ -32,17 +37,31 @@ video {
     border-radius: 8px;
 }
 
+.video-details {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.video-details h2 {
+    margin: 0;
+}
+
+.video-details p {
+    color: #666;
+}
+
 aside {
     flex: 1;
-    margin-left: 1rem;
+    margin-left: 1.5rem;
     padding: 1rem;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
+aside h2 {
     text-align: center;
+    margin-top: 0;
 }
 
 #playlist {
@@ -51,14 +70,22 @@ h2 {
 }
 
 .video-item {
-    padding: 0.5rem;
+    padding: 0.75rem 1rem;
     margin: 0.5rem 0;
     cursor: pointer;
     background-color: #e0e0e0;
     border-radius: 4px;
-    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 .video-item:hover {
     background-color: #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.video-item i {
+    margin-right: 1rem;
+    color: #333;
 }
