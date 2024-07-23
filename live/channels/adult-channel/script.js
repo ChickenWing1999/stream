@@ -1,25 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const playlist = document.querySelectorAll('.video-item');
-    const mainVideo = document.getElementById('main-video');
-    const videoSource = document.getElementById('video-source');
-    const videoTitle = document.getElementById('video-title');
-    const videoDescription = document.getElementById('video-description');
+    const gallery = document.querySelector('.gallery');
 
-    playlist.forEach(item => {
-        item.addEventListener('click', () => {
-            const src = item.getAttribute('data-src');
-            const title = item.getAttribute('data-title');
-            const description = item.getAttribute('data-description');
-            
-            videoSource.setAttribute('src', src);
-            mainVideo.load();
-            mainVideo.play();
-            videoTitle.textContent = title;
-            videoDescription.textContent = description;
+    const videoLinks = [
+        'https://www.youtube.com/embed/dQw4w9WgXcQ',
+        'https://www.youtube.com/embed/tgbNymZ7vqY',
+        // Add more video links here...
+    ];
 
-            // Highlight the selected video item
-            playlist.forEach(vid => vid.classList.remove('active'));
-            item.classList.add('active');
-        });
-    });
+    for (let i = 0; i < 100; i++) {
+        const videoLink = videoLinks[i % videoLinks.length]; // Cycle through the video links
+        const videoItem = document.createElement('div');
+        videoItem.className = 'video-item';
+        videoItem.innerHTML = `
+            <iframe src="${videoLink}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        `;
+        gallery.appendChild(videoItem);
+    }
 });
