@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Playlist</title>
+    <title>Professional Video Playlist</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <header>
@@ -16,13 +17,23 @@
                 <source id="video-source" src="videos/video1.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
+            <div class="video-details">
+                <h2 id="video-title">Video 1</h2>
+                <p id="video-description">Description for Video 1</p>
+            </div>
         </div>
         <aside>
             <h2>Playlist</h2>
             <ul id="playlist">
-                <li class="video-item" data-src="videos/video1.mp4">Video 1</li>
-                <li class="video-item" data-src="videos/video2.mp4">Video 2</li>
-                <li class="video-item" data-src="videos/video3.mp4">Video 3</li>
+                <li class="video-item" data-src="videos/video1.mp4" data-title="Video 1" data-description="Description for Video 1">
+                    <i class="fas fa-play-circle"></i> Video 1
+                </li>
+                <li class="video-item" data-src="videos/video2.mp4" data-title="Video 2" data-description="Description for Video 2">
+                    <i class="fas fa-play-circle"></i> Video 2
+                </li>
+                <li class="video-item" data-src="videos/video3.mp4" data-title="Video 3" data-description="Description for Video 3">
+                    <i class="fas fa-play-circle"></i> Video 3
+                </li>
             </ul>
         </aside>
     </main>
