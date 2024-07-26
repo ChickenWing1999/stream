@@ -52,37 +52,33 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Show reminder
-    reminder.style.display = 'block';
+    reminder.style.display = 'flex';
     closeReminder.addEventListener('click', () => {
         reminder.style.display = 'none';
     });
 
     // Function to check stream status
     function checkStream(url, statusElement) {
-        // Use fetch with a timeout
-        const timeout = 5000; // 5 seconds timeout
-        const controller = new AbortController();
-        const id = setTimeout(() => controller.abort(), timeout);
+        // Create a hidden iframe to check stream status
+        const iframe = document.createElement('iframe');
+        iframe.style.display = 'none';
+        iframe.src = url;
 
-        fetch(url, { method: 'GET', signal: controller.signal })
-            .then(response => {
-                clearTimeout(id);
-                if (response.ok) {
-                    statusElement.textContent = 'LIVE';
-                    statusElement.classList.remove('broken');
-                    statusElement.style.display = 'inline-block';
-                } else {
-                    statusElement.textContent = 'BROKEN';
-                    statusElement.classList.add('broken');
-                    statusElement.style.display = 'inline-block';
-                }
-            })
-            .catch(() => {
-                clearTimeout(id);
-                statusElement.textContent = 'BROKEN';
-                statusElement.classList.add('broken');
-                statusElement.style.display = 'inline-block';
-            });
+        iframe.onload = () => {
+            statusElement.textContent = 'LIVE';
+            statusElement.classList.remove('broken');
+            statusElement.style.display = 'inline-block';
+        };
+
+        iframe.onerror = () => {
+            statusElement.textContent = 'BROKEN';
+            statusElement.classList.add('broken');
+            statusElement.style.display = 'inline-block';
+        };
+
+        document.body.appendChild(iframe);
+        // Remove iframe after status check
+        setTimeout(() => document.body.removeChild(iframe), 3000);
     }
 
     // Check status for all channels
