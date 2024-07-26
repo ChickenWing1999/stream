@@ -96,10 +96,10 @@ body {
 
 .reminder .close {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 10px;
+    right: 40px;
     cursor: pointer;
-    font-size: 28px;
+    font-size: 38px;
     font-weight: bold;
     color: #fff;
 }
@@ -130,4 +130,32 @@ body {
         text-align: center;
         flex-direction: column;
     }
+
+    /* Add to existing CSS */
+
+.live-status {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #000;
+    color: #ff0000; /* Red color */
+    padding: 5px 10px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    animation: blink 1s step-start infinite;
+    display: none; /* Hidden by default */
+}
+
+.live-status.broken {
+    color: #ff0000; /* Red color */
+    animation: none; /* No blinking animation */
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
 }
