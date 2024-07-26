@@ -67,6 +67,10 @@ body {
     color: #fff;
 }
 
+.channel-list li span {
+    flex: 1;
+}
+
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
