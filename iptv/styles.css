@@ -46,7 +46,7 @@ body {
 }
 
 .channel-list input {
-    width: calc(100% - 50px);
+    width: calc(100% - 20px);
     padding: 10px;
     margin: 15px 0;
     border: 1px solid #444;
