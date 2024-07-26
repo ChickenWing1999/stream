@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const liveStream = document.getElementById('liveStream');
     const searchBox = document.getElementById('searchBox');
     const reminder = document.getElementById('reminder');
+    const closeReminder = document.getElementById('closeReminder');
 
     channels.forEach((channel, index) => {
         const li = document.createElement('li');
@@ -42,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Show reminder
     reminder.style.display = 'block';
-    setTimeout(() => {
+    closeReminder.addEventListener('click', () => {
         reminder.style.display = 'none';
-    }, 5000); // Reminder will disappear after 5 seconds
+    });
 });
