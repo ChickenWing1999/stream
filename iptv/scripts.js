@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const span = document.createElement('span');
 
         img.src = channel.image;
-        img.classList.add('img-fluid', 'rounded', 'mx-auto', 'd-block');
+        img.classList.add('channel-image');
         span.textContent = channel.name;
 
         li.appendChild(img);
