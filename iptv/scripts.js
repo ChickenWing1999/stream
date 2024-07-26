@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const reminder = document.getElementById('reminder');
     const closeReminder = document.getElementById('closeReminder');
 
+    // Populate channel list
     channels.forEach((channel, index) => {
         const li = document.createElement('li');
         li.textContent = `${index + 1}. ${channel.name}`;
@@ -32,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Set the default channel
     if (channels.length > 0) {
         liveStream.src = channels[0].link;
+        // Perform status check for the default channel
         checkStream(channels[0].link, document.querySelectorAll('.live-status')[0]);
     }
 
@@ -75,4 +77,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 statusElement.style.display = 'inline-block';
             });
     }
+
+    // Check status for all channels
+    function checkAllStreams() {
+        document.querySelectorAll('.live-status').forEach((statusElement, index) => {
+            checkStream(channels[index].link, statusElement);
+        });
+    }
+
+    // Perform status check for all channels on page load
+    checkAllStreams();
 });
