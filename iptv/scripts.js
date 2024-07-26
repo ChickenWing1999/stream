@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const channels = [
         { name: 'Channel 1', link: 'https://example.com/embed/channel1' },
-        { name: 'Channel 2', link: 'https://example.com/embed/channel2' },
+        { name: 'Cinema One', link: 'https://player.livepush.io/emv2fjgAopLGy' },
         { name: 'Channel 3', link: 'https://example.com/embed/channel3' },
         // Add more channels as needed
     ];
