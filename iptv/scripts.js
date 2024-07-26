@@ -13,17 +13,18 @@ document.addEventListener('DOMContentLoaded', function () {
         const li = document.createElement('li');
         const img = document.createElement('img');
         const span = document.createElement('span');
-        
+
         img.src = channel.image;
+        img.classList.add('img-fluid', 'rounded', 'mx-auto', 'd-block');
         span.textContent = channel.name;
 
         li.appendChild(img);
         li.appendChild(span);
-        
+
         li.addEventListener('click', () => {
             liveStream.src = channel.link;
         });
-        
+
         channelList.appendChild(li);
     });
 
