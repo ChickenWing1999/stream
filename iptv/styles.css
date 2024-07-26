@@ -31,13 +31,6 @@ body {
     border-left: 1px solid #ccc;
     overflow-y: auto;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-    transition: opacity 0.5s;
-    display: none;
-}
-
-.channel-list.transparent {
-    opacity: 0;
-    pointer-events: none;
 }
 
 .channel-list h2 {
@@ -88,35 +81,12 @@ body {
     color: #fff;
 }
 
-.buttons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-}
-
-.buttons button {
-    margin: 5px;
-    padding: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.buttons button:hover {
-    background-color: #0056b3;
-}
-
 .reminder {
     display: none;
     position: fixed;
-    bottom: 20px;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     background-color: rgba(0, 0, 0, 0.7);
     color: #fff;
     padding: 10px 20px;
