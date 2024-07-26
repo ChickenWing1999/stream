@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const channelList = document.getElementById('channelList');
     const channelUl = document.getElementById('channels');
     const liveStream = document.getElementById('liveStream');
-    const buttons = document.getElementById('buttons');
     const searchBox = document.getElementById('searchBox');
     const reminder = document.getElementById('reminder');
 
@@ -17,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const li = document.createElement('li');
         const img = document.createElement('img');
         const span = document.createElement('span');
-        const button = document.createElement('button');
 
         img.src = channel.image;
         img.classList.add('channel-image');
@@ -30,16 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
             liveStream.src = channel.link;
         });
 
-        button.textContent = `${index + 1}. ${channel.name}`;
-        button.addEventListener('click', () => {
-            liveStream.src = channel.link;
-            channelList.classList.remove('transparent');
-            buttons.style.display = 'none';
-            channelList.style.display = 'block';
-        });
-
         channelUl.appendChild(li);
-        buttons.appendChild(button);
     });
 
     // Set the default channel
@@ -48,9 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     liveStream.addEventListener('click', () => {
-        channelList.classList.add('transparent');
         channelList.style.display = 'none';
-        buttons.style.display = 'flex';
         liveStream.requestFullscreen();
     });
 
@@ -63,10 +50,6 @@ document.addEventListener('DOMContentLoaded', function () {
             li[i].style.display = txtValue.toLowerCase().indexOf(filter) > -1 ? '' : 'none';
         }
     });
-
-    // Hide channel list initially
-    channelList.classList.add('transparent');
-    channelList.style.display = 'none';
 
     // Show reminder
     reminder.style.display = 'block';
