@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const buttons = document.getElementById('buttons');
     const searchBox = document.getElementById('searchBox');
 
-    channels.forEach(channel => {
+    channels.forEach((channel, index) => {
         const li = document.createElement('li');
         const img = document.createElement('img');
         const span = document.createElement('span');
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         img.src = channel.image;
         img.classList.add('channel-image');
-        span.textContent = channel.name;
+        span.textContent = `${index + 1}. ${channel.name}`;
 
         li.appendChild(img);
         li.appendChild(span);
@@ -32,8 +32,9 @@ document.addEventListener('DOMContentLoaded', function () {
         button.textContent = channel.name;
         button.addEventListener('click', () => {
             liveStream.src = channel.link;
-            channelList.classList.remove('hidden');
+            channelList.classList.remove('transparent');
             buttons.style.display = 'none';
+            channelList.style.display = 'block';
         });
 
         channelUl.appendChild(li);
@@ -46,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     liveStream.addEventListener('click', () => {
-        channelList.classList.add('hidden');
+        channelList.classList.add('transparent');
         buttons.style.display = 'flex';
         liveStream.requestFullscreen();
     });
@@ -60,4 +61,8 @@ document.addEventListener('DOMContentLoaded', function () {
             li[i].style.display = txtValue.toLowerCase().indexOf(filter) > -1 ? '' : 'none';
         }
     });
+
+    // Hide channel list initially
+    channelList.classList.add('transparent');
+    channelList.style.display = 'none';
 });
