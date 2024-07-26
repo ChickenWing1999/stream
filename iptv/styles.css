@@ -32,9 +32,10 @@ body {
     overflow-y: auto;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
     transition: opacity 0.5s;
+    display: none;
 }
 
-.channel-list.hidden {
+.channel-list.transparent {
     opacity: 0;
     pointer-events: none;
 }
@@ -78,22 +79,23 @@ body {
     flex-shrink: 0;
 }
 
+.channel-list li span {
+    flex: 1;
+}
+
 .channel-list li:hover {
     background-color: #007bff;
     color: #fff;
 }
 
-.channel-list li span {
-    flex: 1;
-}
-
 .buttons {
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: center;
     position: absolute;
     top: 10px;
     right: 10px;
+    display: none;
 }
 
 .buttons button {
