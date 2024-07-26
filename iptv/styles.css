@@ -28,7 +28,7 @@ body {
 
 .channel-list {
     flex: 1;
-    background-color: #292b2c; /* Darker gray for contrast */
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
     border-left: 1px solid #444;
     overflow-y: auto;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
@@ -83,28 +83,27 @@ body {
 }
 
 .reminder {
-    display: none;
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #23262E;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #23262E; /* Semi-transparent dark overlay */
     color: #fff;
-    padding: 15px;
-    border-radius: 5px;
-    font-size: 24px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
     text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
 }
 
 .reminder .close {
     position: absolute;
     top: 15px;
     right: 30px;
+    font-size: 33px;
     cursor: pointer;
-    font-size: 32px;
-    font-weight: bold;
-    color: #fff;
 }
 
 @media (max-width: 768px) {
@@ -134,7 +133,7 @@ body {
         flex-direction: column;
     }
 
-    .channel-list .live-status {
+.channel-list .live-status {
     color: #ff0000; /* Red color */
     font-size: 16px;
     font-weight: bold;
