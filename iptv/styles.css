@@ -28,10 +28,10 @@ body {
 
 .channel-list {
     flex: 1;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-left: 1px solid #ccc;
+    background-color: #292b2c; /* Darker gray for contrast */
+    border-left: 1px solid #444;
     overflow-y: auto;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
     padding: 15px;
     position: relative;
 }
@@ -39,22 +39,24 @@ body {
 .channel-list h2 {
     margin: 0;
     padding: 10px;
-    background-color: #007bff;
+    background-color: #17a2b8; /* Complementary color */
     color: #fff;
     text-align: center;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #444;
 }
 
 .channel-list input {
     width: calc(100% - 30px);
     padding: 10px;
     margin: 15px 0;
-    border: 1px solid #ccc;
+    border: 1px solid #444;
     border-radius: 5px;
     box-sizing: border-box; /* Ensures padding does not overflow */
     display: block;
     margin-left: auto;
     margin-right: auto;
+    background-color: #fff;
+    color: #333;
 }
 
 .channel-list ul {
@@ -67,10 +69,13 @@ body {
     padding: 10px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
+    background-color: #343a40; /* Darker background for list items */
+    border-radius: 5px;
+    margin-bottom: 10px;
 }
 
 .channel-list li:hover {
-    background-color: #007bff;
+    background-color: #17a2b8; /* Highlight color on hover */
     color: #fff;
 }
 
@@ -80,7 +85,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.9);
     color: #fff;
     padding: 15px;
     border-radius: 5px;
