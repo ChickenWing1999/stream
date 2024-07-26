@@ -72,6 +72,9 @@ body {
     background-color: #343a40; /* Darker background for list items */
     border-radius: 5px;
     margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between; /* Space between channel name and status */
+    align-items: center;
 }
 
 .channel-list li:hover {
@@ -131,7 +134,18 @@ body {
         flex-direction: column;
     }
 
-    /* Add to existing CSS */
+    .channel-list .live-status {
+    color: #ff0000; /* Red color */
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.channel-list .broken {
+    color: #ff0000; /* Red color */
+    animation: none; /* No blinking animation */
+}
 
 .live-status {
     position: absolute;
