@@ -12,22 +12,27 @@ document.addEventListener('DOMContentLoaded', function () {
     const searchBox = document.getElementById('searchBox');
     const reminder = document.getElementById('reminder');
     const closeReminder = document.getElementById('closeReminder');
-    const liveStatus = document.getElementById('liveStatus');
 
     channels.forEach((channel, index) => {
         const li = document.createElement('li');
         li.textContent = `${index + 1}. ${channel.name}`;
+
+        const status = document.createElement('span');
+        status.className = 'live-status';
+        li.appendChild(status);
+
         li.addEventListener('click', () => {
             liveStream.src = channel.link;
-            checkStream(channel.link);
+            checkStream(channel.link, status);
         });
+
         channelUl.appendChild(li);
     });
 
     // Set the default channel
     if (channels.length > 0) {
         liveStream.src = channels[0].link;
-        checkStream(channels[0].link);
+        checkStream(channels[0].link, document.querySelectorAll('.live-status')[0]);
     }
 
     liveStream.addEventListener('click', () => {
@@ -51,23 +56,23 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Function to check stream status
-    function checkStream(url) {
+    function checkStream(url, statusElement) {
         fetch(url, { method: 'HEAD' })
             .then(response => {
                 if (response.ok) {
-                    liveStatus.textContent = 'LIVE';
-                    liveStatus.classList.remove('broken');
-                    liveStatus.style.display = 'block';
+                    statusElement.textContent = 'LIVE';
+                    statusElement.classList.remove('broken');
+                    statusElement.style.display = 'inline-block';
                 } else {
-                    liveStatus.textContent = 'BROKEN';
-                    liveStatus.classList.add('broken');
-                    liveStatus.style.display = 'block';
+                    statusElement.textContent = 'BROKEN';
+                    statusElement.classList.add('broken');
+                    statusElement.style.display = 'inline-block';
                 }
             })
             .catch(() => {
-                liveStatus.textContent = 'BROKEN';
-                liveStatus.classList.add('broken');
-                liveStatus.style.display = 'block';
+                statusElement.textContent = 'BROKEN';
+                statusElement.classList.add('broken');
+                statusElement.style.display = 'inline-block';
             });
     }
 });
