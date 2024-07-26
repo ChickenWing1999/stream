@@ -59,8 +59,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Function to check stream status
     function checkStream(url, statusElement) {
-        fetch(url, { method: 'HEAD' })
+        // Use fetch with a timeout
+        const timeout = 5000; // 5 seconds timeout
+        const controller = new AbortController();
+        const id = setTimeout(() => controller.abort(), timeout);
+
+        fetch(url, { method: 'GET', signal: controller.signal })
             .then(response => {
+                clearTimeout(id);
                 if (response.ok) {
                     statusElement.textContent = 'LIVE';
                     statusElement.classList.remove('broken');
@@ -72,6 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             })
             .catch(() => {
+                clearTimeout(id);
                 statusElement.textContent = 'BROKEN';
                 statusElement.classList.add('broken');
                 statusElement.style.display = 'inline-block';
