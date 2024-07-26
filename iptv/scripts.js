@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const liveStream = document.getElementById('liveStream');
     const buttons = document.getElementById('buttons');
     const searchBox = document.getElementById('searchBox');
+    const reminder = document.getElementById('reminder');
 
     channels.forEach((channel, index) => {
         const li = document.createElement('li');
@@ -29,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
             liveStream.src = channel.link;
         });
 
-        button.textContent = channel.name;
+        button.textContent = `${index + 1}. ${channel.name}`;
         button.addEventListener('click', () => {
             liveStream.src = channel.link;
             channelList.classList.remove('transparent');
@@ -48,6 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     liveStream.addEventListener('click', () => {
         channelList.classList.add('transparent');
+        channelList.style.display = 'none';
         buttons.style.display = 'flex';
         liveStream.requestFullscreen();
     });
@@ -65,4 +67,10 @@ document.addEventListener('DOMContentLoaded', function () {
     // Hide channel list initially
     channelList.classList.add('transparent');
     channelList.style.display = 'none';
+
+    // Show reminder
+    reminder.style.display = 'block';
+    setTimeout(() => {
+        reminder.style.display = 'none';
+    }, 5000); // Reminder will disappear after 5 seconds
 });
