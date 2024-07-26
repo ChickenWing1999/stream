@@ -27,13 +27,14 @@ body {
 }
 
 .channel-list {
-    flex: 1;
     background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
-    border-left: 1px solid #444;
+    width: 250px; /* Adjust width as needed */
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
     overflow-y: auto;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
-    padding: 15px;
-    position: relative;
 }
 
 .channel-list h2 {
@@ -46,17 +47,11 @@ body {
 }
 
 .channel-list input {
-    width: calc(100% - 20px);
-    padding: 10px;
-    margin: 15px 0;
-    border: 1px solid #444;
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    box-sizing: border-box; /* Ensures padding does not overflow */
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #fff;
-    color: #333;
 }
 
 .channel-list ul {
@@ -75,34 +70,45 @@ body {
     display: flex;
     justify-content: space-between; /* Space between channel name and status */
     align-items: center;
-}
-
-.channel-list li:hover {
-    background-color: #17a2b8; /* Highlight color on hover */
     color: #fff;
 }
 
-.reminder {
+.channel-list li:hover {
+    background-color: #495057; /* Slightly lighter on hover */
+}
+
+/* Full-screen overlay for the reminder */
+.overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #23262E; /* Semi-transparent dark overlay */
-    color: #fff;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    font-size: 18px;
-    text-align: center;
-    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent dark overlay */
+    display: none; /* Hidden by default */
+    z-index: 1000; /* Make sure it's above other content */
+}
+
+/* Pop-up reminder styling */
+.reminder {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #23262E;
+    color: #000;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: none; /* Hidden by default */
+    z-index: 1001; /* Make sure it's above the overlay */
 }
 
 .reminder .close {
     position: absolute;
-    top: 15px;
-    right: 30px;
-    font-size: 33px;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
     cursor: pointer;
 }
 
@@ -132,43 +138,5 @@ body {
         text-align: center;
         flex-direction: column;
     }
-
-.channel-list .live-status {
-    color: #ff0000; /* Red color */
-    font-size: 16px;
-    font-weight: bold;
-    display: inline-block;
-    margin-left: 10px;
-}
-
-.channel-list .broken {
-    color: #ff0000; /* Red color */
-    animation: none; /* No blinking animation */
-}
-
-.live-status {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background-color: #000;
-    color: #ff0000; /* Red color */
-    padding: 5px 10px;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 5px;
-    animation: blink 1s step-start infinite;
-    display: none; /* Hidden by default */
-}
-
-.live-status.broken {
-    color: #ff0000; /* Red color */
-    animation: none; /* No blinking animation */
-}
-
-@keyframes blink {
-    0% { opacity: 1; }
-    50% { opacity: 0; }
-    100% { opacity: 1; }
-}
 
 }
