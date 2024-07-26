@@ -60,6 +60,7 @@ body {
     height: 40px;
     margin-right: 10px;
     border-radius: 5px;
+    flex-shrink: 0;
 }
 
 .channel-list li:hover {
