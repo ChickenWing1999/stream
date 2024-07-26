@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
     const channels = [
-        { name: 'Channel 1', link: 'https://example.com/embed/channel1' },
-        { name: 'Channel 2', link: 'https://example.com/embed/channel2' },
-        { name: 'Channel 3', link: 'https://example.com/embed/channel3' },
+        { name: 'Cartoonito', link: 'https://player.livepush.io/emv5POxKMYWPB' },
+        { name: 'TV5 HD', link: 'https://player.livepush.io/emvjUNWUzuU2J' },
+        { name: 'ANC HD', link: 'https://player.livepush.io/emvptOp3hIomK' },
         // Add more channels as needed
     ];
 
