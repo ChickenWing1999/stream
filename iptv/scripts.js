@@ -12,17 +12,13 @@ document.addEventListener('DOMContentLoaded', function () {
     const searchBox = document.getElementById('searchBox');
     const reminder = document.getElementById('reminder');
     const closeReminder = document.getElementById('closeReminder');
-    const overlay = document.getElementById('overlay');
 
-    // Populate channel list
     channels.forEach((channel, index) => {
         const li = document.createElement('li');
         li.textContent = `${index + 1}. ${channel.name}`;
-
         li.addEventListener('click', () => {
             liveStream.src = channel.link;
         });
-
         channelUl.appendChild(li);
     });
 
@@ -46,21 +42,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Show reminder
-    function showReminder() {
-        overlay.style.display = 'block';
-        reminder.style.display = 'block';
-    }
-
-    function hideReminder() {
-        overlay.style.display = 'none';
+    reminder.style.display = 'block';
+    closeReminder.addEventListener('click', () => {
         reminder.style.display = 'none';
-    }
-
-    reminder.style.display = 'none'; // Hide by default
-    overlay.style.display = 'none'; // Hide by default
-
-    closeReminder.addEventListener('click', hideReminder);
-
-    // Show the reminder on page load
-    showReminder();
+    });
 });
