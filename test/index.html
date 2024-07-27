@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IPTV Service</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://vjs.zencdn.net/7.11.4/video-js.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <script src="https://vjs.zencdn.net/7.11.4/video.js"></script>
 </head>
 <body>
     <div class="container">
         <!-- Live stream display -->
         <div id="liveStreamContainer" class="live-stream-container">
-            <video id="liveStreamVideo" controls></video>
+            <video id="liveStreamVideo" class="video-js vjs-default-skin" controls></video>
             <iframe id="liveStreamIframe" frameborder="0" allowfullscreen></iframe>
         </div>
 
