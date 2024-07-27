@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IPTV Service</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://unpkg.com/shaka-player/dist/shaka-player.compiled.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 </head>
 <body>
     <div class="container">
         <!-- Live stream display -->
         <div id="liveStreamContainer" class="live-stream-container">
-            <video id="liveStreamVideo" class="shaka-video" controls></video>
+            <video id="liveStreamVideo" controls></video>
             <iframe id="liveStreamIframe" frameborder="0" allowfullscreen></iframe>
         </div>
 
