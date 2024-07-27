@@ -30,7 +30,7 @@ body {
 }
 
 .channel-list {
-    background-color: rgba(0, 0, 0, 0.8); /* Slightly transparent white */
+    background-color: rgba(0, 0, 0, 0.8); /* Slightly transparent black */
     width: 250px; /* Adjust width as needed */
     padding: 10px;
     height: 100%;
@@ -61,9 +61,14 @@ body {
     color: #fff;
 }
 
-.channel-list li:hover,
-.channel-list li:active {
+.channel-list li:hover {
     background-color: #666; /* Slightly lighter on hover */
+    color: #fff; /* Ensure the text color stays white */
+}
+
+.channel-list li:active {
+    background-color: #888; /* Slightly lighter on active */
+    color: #fff; /* Ensure the text color stays white */
 }
 
 /* Full-screen overlay for the reminder */
