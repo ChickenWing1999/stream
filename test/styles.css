@@ -62,7 +62,7 @@ body {
 }
 
 .channel-list li:hover,
-.channel-list li.active {
+.channel-list li:active {
     background-color: #666; /* Slightly lighter on hover */
 }
 
