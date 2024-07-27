@@ -1,6 +1,21 @@
 document.addEventListener('DOMContentLoaded', function () {
     const channels = [
-        { name: 'Cinema One', link: 'https://player.livepush.io/emv2fjgAopLGy', type: 'embed' },
+        { name: 'HBO', link: 'https://qp-pldt-live-grp-03-prod.akamaized.net/out/u/hbohd_qp.m3u8', type: 'hls' },
+        { name: 'CINE MO!', link: 'https://cinemo-abscbn-ono.amagi.tv/playlist.m3u8', type: 'hls' },
+        { name: 'Cinema One', link: 'https://cinemaone-abscbn-ono.amagi.tv/index.m3u8', type: 'hls' },
+        { name: 'MYX', link: 'https://myxnola-abscbn-ono.amagi.tv/index.m3u8', type: 'hls' },
+        { name: 'ANC', link: 'https://ancglobal-abscbn-ono.amagi.tv/playlist.m3u8', type: 'hls' },
+        { name: 'True FM', link: 'https://qp-pldt-live-grp-05-prod.akamaized.net/out/u/radyo5_qp.m3u8', type: 'hls' },
+        { name: 'TeleRadyo Serbisyo', link: 'https://teleradyo-abscbn-ono.amagi.tv/playlist.m3u8', type: 'hls' },
+        { name: 'CLTV 36', link: 'https://live.cltv36.tv:5443/LiveApp/streams/live.m3u8', type: 'hls' },
+        { name: 'Travel Channel', link: 'https://player.livepush.io/emv2fjgAopLGy', type: 'hls' },
+        { name: 'HGTV', link: 'https://dplus.gammacdn.workers.dev/videos/111.m3u8', type: 'hls' },
+        { name: 'Food Network', link: 'https://dplus.gammacdn.workers.dev/videos/112.m3u8', type: 'hls' },
+        { name: 'Discovery HD', link: 'https://dplus.gammacdn.workers.dev/videos/95.m3u8', type: 'hls' },
+        { name: 'Discovery Science', link: 'https://dplus.gammacdn.workers.dev/videos/96.m3u8', type: 'hls' },
+        { name: 'TLC', link: 'https://dplus.gammacdn.workers.dev/videos/97.m3u8', type: 'hls' },
+        { name: 'Discovery Turbo', link: 'https://dplus.gammacdn.workers.dev/videos/98.m3u8', type: 'hls' },
+        { name: 'Animal Planet', link: 'https://dplus.gammacdn.workers.dev/videos/99.m3u8', type: 'hls' },
         { name: 'Cartoon Network', link: 'https://cdn1.skygo.mn/live/disk1/Cartoon_Network/HLS-FTA/Cartoon_Network.m3u8', type: 'hls' },
         // Add more channels as needed
     ];
