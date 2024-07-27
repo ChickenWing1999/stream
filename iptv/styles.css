@@ -80,7 +80,7 @@ body {
 }
 
 .reminder {
-    width: 100%;
+    width: calc(100% - 15px);
     display: none;
     position: fixed;
     top: 50%;
