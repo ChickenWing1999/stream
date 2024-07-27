@@ -80,6 +80,7 @@ body {
 }
 
 .reminder {
+    width: 100%;
     display: none;
     position: fixed;
     top: 50%;
@@ -87,7 +88,7 @@ body {
     transform: translate(-50%, -50%);
     background-color: #23262E;
     color: #fff;
-    padding: 65px;
+    padding: 45px;
     border-radius: 5px;
     font-size: 24px;
     text-align: center;
