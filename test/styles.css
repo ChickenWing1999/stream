@@ -1,8 +1,8 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #2c3e50; /* Darker background for better contrast */
-    color: #ecf0f1; /* Light color for text */
+    background-color: #1a1a1a; /* Dark background for better contrast */
+    color: #f0f0f0; /* Light color for text */
 }
 
 .container {
@@ -30,7 +30,7 @@ body {
 }
 
 .channel-list {
-    background-color: rgba(44, 62, 80, 0.9); /* Darker background with slight transparency */
+    background-color: rgba(26, 26, 26, 0.9); /* Darker background with slight transparency */
     width: 250px; /* Adjust width as needed */
     padding: 10px;
     height: 100%;
@@ -41,10 +41,10 @@ body {
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
-    border: 1px solid #34495e; /* Border color to complement the background */
+    border: 1px solid #444; /* Border color to complement the background */
     border-radius: 5px;
-    background-color: #34495e; /* Input background color */
-    color: #ecf0f1; /* Input text color */
+    background-color: #333; /* Input background color */
+    color: #f0f0f0; /* Input text color */
 }
 
 .channel-list ul {
@@ -57,20 +57,20 @@ body {
     padding: 8px;
     transition: background-color 0.3s, color 0.3s;
     cursor: pointer;
-    background-color: #34495e; /* Background for list items */
+    background-color: #444; /* Background for list items */
     border-radius: 5px;
     margin-bottom: 5px;
-    color: #ecf0f1; /* Text color */
+    color: #f0f0f0; /* Text color */
 }
 
 .channel-list li:hover {
-    background-color: #1abc9c; /* Lighter background on hover */
-    color: #2c3e50; /* Darker text color on hover */
+    background-color: #555; /* Lighter background on hover */
+    color: #ffffff; /* Light text color on hover */
 }
 
 .channel-list li:active {
-    background-color: #16a085; /* Slightly darker background on active */
-    color: #ecf0f1; /* Text color on active */
+    background-color: #666; /* Slightly darker background on active */
+    color: #ffffff; /* Text color on active */
 }
 
 /* Full-screen overlay for the reminder */
@@ -91,8 +91,8 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #34495e;
-    color: #ecf0f1;
+    background-color: #444;
+    color: #f0f0f0;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -106,5 +106,5 @@ body {
     right: 10px;
     font-size: 24px;
     cursor: pointer;
-    color: #ecf0f1; /* Close button color */
+    color: #f0f0f0; /* Close button color */
 }
