@@ -13,16 +13,17 @@ document.addEventListener('DOMContentLoaded', function () {
     const reminder = document.getElementById('reminder');
     const closeReminder = document.getElementById('closeReminder');
     const overlay = document.getElementById('overlay');
-    let player;
 
-    // Initialize Video.js player
+    // Initialize Shaka Player
     function initializePlayer() {
-        player = videojs('liveStreamVideo', {
-            controls: true,
-            autoplay: false,
-            preload: 'auto',
-            fluid: true
-        });
+        const player = new shaka.Player(liveStreamVideo);
+        window.player = player;
+        player.addEventListener('error', onError);
+    }
+
+    // Function to handle player errors
+    function onError(event) {
+        console.error('Error code', event.detail.code, 'object', event.detail);
     }
 
     // Function to load stream based on type
@@ -31,18 +32,14 @@ document.addEventListener('DOMContentLoaded', function () {
             liveStreamVideo.style.display = 'none';
             liveStreamIframe.style.display = 'block';
             liveStreamIframe.src = channel.link;
-            if (player) {
-                player.dispose();
-                player = null;
-            }
         } else if (channel.type === 'hls') {
             liveStreamIframe.style.display = 'none';
             liveStreamVideo.style.display = 'block';
-            if (player) {
-                player.src({ src: channel.link, type: 'application/x-mpegURL' });
+            if (window.player) {
+                window.player.load(channel.link).catch(onError);
             } else {
                 initializePlayer();
-                player.src({ src: channel.link, type: 'application/x-mpegURL' });
+                window.player.load(channel.link).catch(onError);
             }
         }
     }
@@ -120,4 +117,3 @@ document.addEventListener('DOMContentLoaded', function () {
     // Show the reminder on page load
     showReminder();
 });
-
