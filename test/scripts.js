@@ -13,18 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const reminder = document.getElementById('reminder');
     const closeReminder = document.getElementById('closeReminder');
     const overlay = document.getElementById('overlay');
-
-    // Initialize Shaka Player
-    function initializePlayer() {
-        const player = new shaka.Player(liveStreamVideo);
-        window.player = player;
-        player.addEventListener('error', onError);
-    }
-
-    // Function to handle player errors
-    function onError(event) {
-        console.error('Error code', event.detail.code, 'object', event.detail);
-    }
+    let hls;
 
     // Function to load stream based on type
     function loadStream(channel) {
@@ -32,14 +21,22 @@ document.addEventListener('DOMContentLoaded', function () {
             liveStreamVideo.style.display = 'none';
             liveStreamIframe.style.display = 'block';
             liveStreamIframe.src = channel.link;
+            if (hls) {
+                hls.destroy();
+                hls = null;
+            }
         } else if (channel.type === 'hls') {
             liveStreamIframe.style.display = 'none';
             liveStreamVideo.style.display = 'block';
-            if (window.player) {
-                window.player.load(channel.link).catch(onError);
-            } else {
-                initializePlayer();
-                window.player.load(channel.link).catch(onError);
+            if (Hls.isSupported()) {
+                if (hls) {
+                    hls.destroy();
+                }
+                hls = new Hls();
+                hls.loadSource(channel.link);
+                hls.attachMedia(liveStreamVideo);
+            } else if (liveStreamVideo.canPlayType('application/vnd.apple.mpegurl')) {
+                liveStreamVideo.src = channel.link;
             }
         }
     }
@@ -98,19 +95,23 @@ document.addEventListener('DOMContentLoaded', function () {
         const li = channelUl.getElementsByTagName('li');
         for (let i = 0; i < li.length; i++) {
             const txtValue = li[i].textContent || li[i].innerText;
-            li[i].style.display = txtValue.toLowerCase().includes(filter) ? '' : 'none';
+            li[i].style.display = txtValue.toLowerCase().indexOf(filter) > -1 ? '' : 'none';
         }
     });
 
+    // Show reminder
     function showReminder() {
-        reminder.style.display = 'block';
         overlay.style.display = 'block';
+        reminder.style.display = 'block';
     }
 
     function hideReminder() {
-        reminder.style.display = 'none';
         overlay.style.display = 'none';
+        reminder.style.display = 'none';
     }
+
+    reminder.style.display = 'none'; // Hide by default
+    overlay.style.display = 'none'; // Hide by default
 
     closeReminder.addEventListener('click', hideReminder);
 
