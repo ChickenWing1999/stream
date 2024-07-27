@@ -5,14 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IPTV Service</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/3.2.1/shaka-player.compiled.js"></script>
+    <script src="https://unpkg.com/vidstack-player"></script>
 </head>
 <body>
     <div class="container">
         <!-- Live stream display -->
         <div id="liveStreamContainer" class="live-stream-container">
-            <video id="liveStreamVideo" class="shaka-video" controls></video>
-            <iframe id="liveStreamIframe" frameborder="0" allowfullscreen></iframe>
+            <vds-media>
+                <vds-hls src="" type="application/vnd.apple.mpegurl" id="liveStreamVideo"></vds-hls>
+                <iframe id="liveStreamIframe" frameborder="0" allowfullscreen></iframe>
+            </vds-media>
         </div>
 
         <!-- Channel list tab -->
