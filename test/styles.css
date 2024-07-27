@@ -65,6 +65,10 @@ body {
     background-color: #495057; /* Slightly lighter on hover */
 }
 
+.channel-list li.active {
+    background-color: #666;
+}
+
 /* Full-screen overlay for the reminder */
 .overlay {
     position: fixed;
