@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
     const channels = [
         { name: 'Channel 1', link: 'https://example.com/embed/channel1', type: 'embed' },
-        { name: 'Channel 2', link: 'https://example.com/embed/channel2', type: 'embed' },
-        { name: 'Channel 3', link: 'https://example.com/stream/channel3.m3u8', type: 'hls' },
+        { name: 'Cinema One', link: 'https://player.livepush.io/emv2fjgAopLGy', type: 'embed' },
+        { name: 'Cartoon Network', link: 'https://cdn1.skygo.mn/live/disk1/Cartoon_Network/HLS-FTA/Cartoon_Network.m3u8', type: 'hls' },
         // Add more channels as needed
     ];
 
