@@ -54,8 +54,7 @@ body {
 .channel-list li {
     padding: 8px;
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-    background-color: #343a40; /* Darker background for list items */
+    background-color: #444; /* Darker background for list items */
     border-radius: 5px;
     margin-bottom: 5px;
     color: #fff;
@@ -63,7 +62,7 @@ body {
 
 .channel-list li:hover,
 .channel-list li.active {
-    background-color: #495057; /* Slightly lighter on hover */
+    background-color: #666; /* Slightly lighter on hover */
 }
 
 /* Full-screen overlay for the reminder */
