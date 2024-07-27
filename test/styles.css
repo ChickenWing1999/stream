@@ -41,7 +41,7 @@ body {
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
-    border: 1px solid #444; /* Border color to complement the background */
+    border: 1px solid #333; /* Border color to complement the background */
     border-radius: 5px;
     background-color: #333; /* Input background color */
     color: #f0f0f0; /* Input text color */
@@ -65,12 +65,10 @@ body {
 
 .channel-list li:hover {
     background-color: #555; /* Lighter background on hover */
-    color: #ffffff; /* Light text color on hover */
 }
 
 .channel-list li:active {
     background-color: #666; /* Slightly darker background on active */
-    color: #ffffff; /* Text color on active */
 }
 
 /* Full-screen overlay for the reminder */
@@ -91,7 +89,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #444;
+    background-color: #333;
     color: #f0f0f0;
     padding: 20px;
     border-radius: 5px;
