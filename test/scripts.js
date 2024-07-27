@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const channelList = document.getElementById('channelList');
     const channelUl = document.getElementById('channels');
-    const liveStream = document.getElementById('liveStream');
+    const liveStreamVideo = document.getElementById('liveStreamVideo');
+    const liveStreamIframe = document.getElementById('liveStreamIframe');
     const searchBox = document.getElementById('searchBox');
     const reminder = document.getElementById('reminder');
     const closeReminder = document.getElementById('closeReminder');
@@ -17,21 +18,25 @@ document.addEventListener('DOMContentLoaded', function () {
     // Function to load stream based on type
     function loadStream(channel) {
         if (channel.type === 'embed') {
-            liveStream.src = channel.link;
+            liveStreamVideo.style.display = 'none';
+            liveStreamIframe.style.display = 'block';
+            liveStreamIframe.src = channel.link;
             if (hls) {
                 hls.destroy();
                 hls = null;
             }
         } else if (channel.type === 'hls') {
+            liveStreamIframe.style.display = 'none';
+            liveStreamVideo.style.display = 'block';
             if (Hls.isSupported()) {
                 if (hls) {
                     hls.destroy();
                 }
                 hls = new Hls();
                 hls.loadSource(channel.link);
-                hls.attachMedia(liveStream);
-            } else if (liveStream.canPlayType('application/vnd.apple.mpegurl')) {
-                liveStream.src = channel.link;
+                hls.attachMedia(liveStreamVideo);
+            } else if (liveStreamVideo.canPlayType('application/vnd.apple.mpegurl')) {
+                liveStreamVideo.src = channel.link;
             }
         }
     }
@@ -53,19 +58,31 @@ document.addEventListener('DOMContentLoaded', function () {
         loadStream(channels[0]);
     }
 
-    liveStream.addEventListener('click', () => {
-        if (liveStream.requestFullscreen) {
-            liveStream.requestFullscreen();
-        } else if (liveStream.mozRequestFullScreen) { // Firefox
-            liveStream.mozRequestFullScreen();
-        } else if (liveStream.webkitRequestFullscreen) { // Chrome, Safari and Opera
-            liveStream.webkitRequestFullscreen();
-        } else if (liveStream.msRequestFullscreen) { // IE/Edge
-            liveStream.msRequestFullscreen();
+    liveStreamVideo.addEventListener('click', () => {
+        if (liveStreamVideo.requestFullscreen) {
+            liveStreamVideo.requestFullscreen();
+        } else if (liveStreamVideo.mozRequestFullScreen) { // Firefox
+            liveStreamVideo.mozRequestFullScreen();
+        } else if (liveStreamVideo.webkitRequestFullscreen) { // Chrome, Safari and Opera
+            liveStreamVideo.webkitRequestFullscreen();
+        } else if (liveStreamVideo.msRequestFullscreen) { // IE/Edge
+            liveStreamVideo.msRequestFullscreen();
         }
     });
 
-    document.addEventListener('fullscreenchange', (event) => {
+    liveStreamIframe.addEventListener('click', () => {
+        if (liveStreamIframe.requestFullscreen) {
+            liveStreamIframe.requestFullscreen();
+        } else if (liveStreamIframe.mozRequestFullScreen) { // Firefox
+            liveStreamIframe.mozRequestFullScreen();
+        } else if (liveStreamIframe.webkitRequestFullscreen) { // Chrome, Safari and Opera
+            liveStreamIframe.webkitRequestFullscreen();
+        } else if (liveStreamIframe.msRequestFullscreen) { // IE/Edge
+            liveStreamIframe.msRequestFullscreen();
+        }
+    });
+
+    document.addEventListener('fullscreenchange', () => {
         if (!document.fullscreenElement) {
             channelList.style.display = 'block';
         } else {
