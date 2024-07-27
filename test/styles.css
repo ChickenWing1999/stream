@@ -22,7 +22,11 @@ body {
     position: relative;
 }
 
-#liveStreamVideo,
+vds-media {
+    width: 100%;
+    height: 100%;
+}
+
 #liveStreamIframe {
     width: 100%;
     height: 100%;
