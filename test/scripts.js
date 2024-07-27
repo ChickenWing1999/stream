@@ -13,7 +13,17 @@ document.addEventListener('DOMContentLoaded', function () {
     const reminder = document.getElementById('reminder');
     const closeReminder = document.getElementById('closeReminder');
     const overlay = document.getElementById('overlay');
-    let hls;
+    let player;
+
+    // Initialize Video.js player
+    function initializePlayer() {
+        player = videojs('liveStreamVideo', {
+            controls: true,
+            autoplay: false,
+            preload: 'auto',
+            fluid: true
+        });
+    }
 
     // Function to load stream based on type
     function loadStream(channel) {
@@ -21,22 +31,18 @@ document.addEventListener('DOMContentLoaded', function () {
             liveStreamVideo.style.display = 'none';
             liveStreamIframe.style.display = 'block';
             liveStreamIframe.src = channel.link;
-            if (hls) {
-                hls.destroy();
-                hls = null;
+            if (player) {
+                player.dispose();
+                player = null;
             }
         } else if (channel.type === 'hls') {
             liveStreamIframe.style.display = 'none';
             liveStreamVideo.style.display = 'block';
-            if (Hls.isSupported()) {
-                if (hls) {
-                    hls.destroy();
-                }
-                hls = new Hls();
-                hls.loadSource(channel.link);
-                hls.attachMedia(liveStreamVideo);
-            } else if (liveStreamVideo.canPlayType('application/vnd.apple.mpegurl')) {
-                liveStreamVideo.src = channel.link;
+            if (player) {
+                player.src({ src: channel.link, type: 'application/x-mpegURL' });
+            } else {
+                initializePlayer();
+                player.src({ src: channel.link, type: 'application/x-mpegURL' });
             }
         }
     }
@@ -95,26 +101,23 @@ document.addEventListener('DOMContentLoaded', function () {
         const li = channelUl.getElementsByTagName('li');
         for (let i = 0; i < li.length; i++) {
             const txtValue = li[i].textContent || li[i].innerText;
-            li[i].style.display = txtValue.toLowerCase().indexOf(filter) > -1 ? '' : 'none';
+            li[i].style.display = txtValue.toLowerCase().includes(filter) ? '' : 'none';
         }
     });
 
-    // Show reminder
     function showReminder() {
-        overlay.style.display = 'block';
         reminder.style.display = 'block';
+        overlay.style.display = 'block';
     }
 
     function hideReminder() {
-        overlay.style.display = 'none';
         reminder.style.display = 'none';
+        overlay.style.display = 'none';
     }
-
-    reminder.style.display = 'none'; // Hide by default
-    overlay.style.display = 'none'; // Hide by default
 
     closeReminder.addEventListener('click', hideReminder);
 
     // Show the reminder on page load
     showReminder();
 });
+
