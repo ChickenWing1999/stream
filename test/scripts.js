@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     const channels = [
-        { name: 'HBO', link: 'https://qp-pldt-live-grp-03-prod.akamaized.net/out/u/hbohd_qp.m3u8', type: 'hls' },
+        { name: 'HBO', link: 'aHR0cHM6Ly9xcC1wbGR0LWxpdmUtZ3JwLTAzLXByb2QuYWthbWFpemVkLm5ldC9vdXQvdS9oYm9oZF9xcC5tM3U4', type: 'hls' },
         { name: 'CINE MO!', link: 'https://cinemo-abscbn-ono.amagi.tv/playlist.m3u8', type: 'hls' },
         { name: 'Cinema One', link: 'https://cinemaone-abscbn-ono.amagi.tv/index.m3u8', type: 'hls' },
         { name: 'MYX', link: 'https://myxnola-abscbn-ono.amagi.tv/index.m3u8', type: 'hls' },
@@ -29,6 +29,13 @@ document.addEventListener('DOMContentLoaded', function () {
     const closeReminder = document.getElementById('closeReminder');
     const overlay = document.getElementById('overlay');
     let hls;
+
+    // Base64 decode function
+    function decodeBase64(base64) {
+        return decodeURIComponent(atob(base64).split('').map(function(c) {
+            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+        }).join(''));
+    }
 
     // Function to load stream based on type
     function loadStream(channel) {
