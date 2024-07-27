@@ -14,16 +14,33 @@ document.addEventListener('DOMContentLoaded', function () {
     const closeReminder = document.getElementById('closeReminder');
     const overlay = document.getElementById('overlay');
 
+    // Initialize Shaka Player
+    function initializePlayer() {
+        const player = new shaka.Player(liveStreamVideo);
+        window.player = player;
+        player.addEventListener('error', onError);
+    }
+
+    // Function to handle player errors
+    function onError(event) {
+        console.error('Error code', event.detail.code, 'object', event.detail);
+    }
+
     // Function to load stream based on type
     function loadStream(channel) {
         if (channel.type === 'embed') {
-            liveStreamVideo.parentNode.style.display = 'none';
+            liveStreamVideo.style.display = 'none';
             liveStreamIframe.style.display = 'block';
             liveStreamIframe.src = channel.link;
         } else if (channel.type === 'hls') {
             liveStreamIframe.style.display = 'none';
-            liveStreamVideo.parentNode.style.display = 'block';
-            liveStreamVideo.src = channel.link;
+            liveStreamVideo.style.display = 'block';
+            if (window.player) {
+                window.player.load(channel.link).catch(onError);
+            } else {
+                initializePlayer();
+                window.player.load(channel.link).catch(onError);
+            }
         }
     }
 
