@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPTV Service</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+</head>
+<body>
+    <!-- Live stream display -->
+    <div id="liveStreamContainer">
+        <video id="liveStream" width="100%" height="600" controls></video>
+    </div>
+
+    <!-- Channel list tab -->
+    <div id="channelList" class="channel-list">
+        <input type="text" id="searchBox" placeholder="Search channels...">
+        <ul id="channels">
+            <!-- Channel list items will be populated here by JavaScript -->
+        </ul>
+    </div>
+
+    <!-- Pop-up reminder -->
+    <div id="reminder" class="reminder">
+        <span id="closeReminder" class="close">&times;</span>
+        <p>This is a pop-up reminder. Please close it to continue.</p>
+    </div>
+
+    <div id="overlay" class="overlay"></div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
