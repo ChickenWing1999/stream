@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
     const channels = [
-        { name: 'Channel 1', link: 'https://example.com/embed/channel1', type: 'embed' },
         { name: 'Cinema One', link: 'https://player.livepush.io/emv2fjgAopLGy', type: 'embed' },
         { name: 'Cartoon Network', link: 'https://cdn1.skygo.mn/live/disk1/Cartoon_Network/HLS-FTA/Cartoon_Network.m3u8', type: 'hls' },
         // Add more channels as needed
@@ -55,8 +54,23 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     liveStream.addEventListener('click', () => {
-        channelList.style.display = 'none';
-        liveStream.requestFullscreen();
+        if (liveStream.requestFullscreen) {
+            liveStream.requestFullscreen();
+        } else if (liveStream.mozRequestFullScreen) { // Firefox
+            liveStream.mozRequestFullScreen();
+        } else if (liveStream.webkitRequestFullscreen) { // Chrome, Safari and Opera
+            liveStream.webkitRequestFullscreen();
+        } else if (liveStream.msRequestFullscreen) { // IE/Edge
+            liveStream.msRequestFullscreen();
+        }
+    });
+
+    document.addEventListener('fullscreenchange', (event) => {
+        if (!document.fullscreenElement) {
+            channelList.style.display = 'block';
+        } else {
+            channelList.style.display = 'none';
+        }
     });
 
     searchBox.addEventListener('input', () => {
