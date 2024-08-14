@@ -1,8 +1,8 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #1a1a1a; /* Dark background for better contrast */
-    color: #f0f0f0; /* Light color for text */
+    background-color: #333; /* Dark gray background */
+    color: #fff; /* White text for contrast */
 }
 
 .container {
@@ -83,26 +83,29 @@ body {
     z-index: 1000; /* Make sure it's above other content */
 }
 
-/* Pop-up reminder styling */
+
 .reminder {
+    width: calc(70% - 80px);
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #333;
-    color: #f0f0f0;
-    padding: 20px;
+    background-color: #23262E;
+    color: #fff;
+    padding: 45px;
     border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    font-size: 24px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     display: none; /* Hidden by default */
     z-index: 1001; /* Make sure it's above the overlay */
 }
 
 .reminder .close {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 24px;
+    top: 15px;
+    right: 30px;
+    font-size: 30px;
     cursor: pointer;
-    color: #f0f0f0; /* Close button color */
+    color:  #fff; /* Close button color */
 }
