@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const channels = [
         { name: 'ABS-CBN', link: 'https://dlhd.sx/embed/stream-785.php', type: 'embed' },
         { name: 'ONE Sports', link: 'https://bit.ly/4dIklUF', type: 'hls' },
-        { name: 'ONE Sports+', link: 'https://tinyurl.com/SPORTplu', type: 'hls' },
+        { name: 'DZBB Super Radyo', link: 'https://tinyurl.com/RadyoDZBB', type: 'hls' },
         { name: 'HBO', link: 'aHR0cHM6Ly9xcC1wbGR0LWxpdmUtZ3JwLTAzLXByb2QuYWthbWFpemVkLm5ldC9vdXQvdS9oYm9oZF9xcC5tM3U4', type: 'hls' },
         { name: 'CINE MO!', link: 'https://cinemo-abscbn-ono.amagi.tv/playlist.m3u8', type: 'hls' },
         { name: 'Cinema One', link: 'https://cinemaone-abscbn-ono.amagi.tv/index.m3u8', type: 'hls' },
