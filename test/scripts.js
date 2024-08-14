@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     const channels = [
+        { name: 'ABS-CBN', link: 'https://dlhd.sx/embed/stream-785.php', type: 'embed' },
         { name: 'HBO', link: 'aHR0cHM6Ly9xcC1wbGR0LWxpdmUtZ3JwLTAzLXByb2QuYWthbWFpemVkLm5ldC9vdXQvdS9oYm9oZF9xcC5tM3U4', type: 'hls' },
         { name: 'CINE MO!', link: 'https://cinemo-abscbn-ono.amagi.tv/playlist.m3u8', type: 'hls' },
         { name: 'Cinema One', link: 'aHR0cHM6Ly9jaW5lbWFvbmUtYWJzY2JuLW9uby5hbWFnaS50di9pbmRleC5tM3U4', type: 'hls' },
