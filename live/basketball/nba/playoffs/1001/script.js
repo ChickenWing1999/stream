@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Replace this with your actual logic to fetch the live stream ID for the selected game
         // You might use an object or a database to store the mapping of game IDs to live stream IDs
         const gameStreamMap = {
-            game1: "https://gooz.aapmains.net/new-stream-embed/49031",
+            game1: "https://pl.aminfixing5.space/playlist/49031/zoomz2/caxi",
             game2: "https://streamspass.net/nba/76ers.html",
             game3: "",
             // Add more mappings here
